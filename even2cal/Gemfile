@@ -47,4 +47,7 @@ end
 
 gem 'omniauth-vkontakte', :git => 'git://github.com/mamantoha/omniauth-vkontakte.git'
 
+gem 'slim-rails', :git => 'git://github.com/slim-template/slim-rails.git'
+ 
+gem 'vkontakte_api', :git => 'git://github.com/7even/vkontakte_api.git'
 # gem 'debugger', group: [:development, :test]

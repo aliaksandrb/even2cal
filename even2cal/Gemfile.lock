@@ -1,4 +1,15 @@
 GIT
+  remote: git://github.com/7even/vkontakte_api.git
+  revision: 0658a293e989b25c197cdffabc0eaf506e01055d
+  specs:
+    vkontakte_api (1.3.beta)
+      faraday (~> 0.8)
+      faraday_middleware (~> 0.8)
+      faraday_middleware-parse_oj (~> 0.2)
+      hashie (~> 2.0)
+      oauth2 (~> 0.8)
+
+GIT
   remote: git://github.com/mamantoha/omniauth-vkontakte.git
   revision: 8629dfeeef238721b37f33b34e0330e245a41273
   specs:
@@ -6,6 +17,16 @@ GIT
       multi_json
       omniauth (~> 1.1.0)
       omniauth-oauth2 (~> 1.0)
+
+GIT
+  remote: git://github.com/slim-template/slim-rails.git
+  revision: d33618b6dde966091de11bc702d493ce3252245c
+  specs:
+    slim-rails (2.0.1)
+      actionpack (>= 3.0, < 4.1)
+      activesupport (>= 3.0, < 4.1)
+      railties (>= 3.0, < 4.1)
+      slim (~> 2.0)
 
 GEM
   remote: https://rubygems.org/
@@ -48,6 +69,11 @@ GEM
     execjs (2.0.2)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
+    faraday_middleware (0.9.0)
+      faraday (>= 0.7.4, < 0.9)
+    faraday_middleware-parse_oj (0.2.1)
+      faraday_middleware (~> 0.8)
+      oj (~> 2.0)
     hashie (2.0.5)
     hike (1.2.3)
     httpauth (0.2.0)
@@ -75,6 +101,7 @@ GEM
       jwt (~> 0.1.4)
       multi_json (~> 1.0)
       rack (~> 1.2)
+    oj (2.1.4)
     omniauth (1.1.4)
       hashie (>= 1.2, < 3)
       rack
@@ -110,6 +137,9 @@ GEM
     sdoc (0.3.20)
       json (>= 1.1.3)
       rdoc (~> 3.10)
+    slim (2.0.1)
+      temple (~> 0.6.6)
+      tilt (>= 1.3.3, < 2.1)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -120,6 +150,7 @@ GEM
       activesupport (>= 3.0)
       sprockets (~> 2.8)
     sqlite3 (1.3.8)
+    temple (0.6.6)
     therubyracer (0.12.0)
       libv8 (~> 3.16.14.0)
       ref
@@ -148,7 +179,9 @@ DEPENDENCIES
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)
   sdoc
+  slim-rails!
   sqlite3
   therubyracer
   turbolinks
   uglifier (>= 1.3.0)
+  vkontakte_api!

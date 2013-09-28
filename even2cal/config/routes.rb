@@ -1,9 +1,13 @@
 Even2cal::Application.routes.draw do
+  get "sessions/index"
+  get "sessions/vk_auth"
+  
+  get '/auth/vkontakte/callback', to: 'sessions#vk_auth'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root to: 'sessions#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
