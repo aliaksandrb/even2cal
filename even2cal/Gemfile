@@ -18,6 +18,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'therubyracer', :require => 'v8'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -42,4 +44,7 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
+
+gem 'omniauth-vkontakte', :git => 'git://github.com/mamantoha/omniauth-vkontakte.git'
+
 # gem 'debugger', group: [:development, :test]
