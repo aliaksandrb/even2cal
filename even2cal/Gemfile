@@ -50,4 +50,8 @@ gem 'omniauth-vkontakte', :git => 'git://github.com/mamantoha/omniauth-vkontakte
 gem 'slim-rails', :git => 'git://github.com/slim-template/slim-rails.git'
  
 gem 'vkontakte_api', :git => 'git://github.com/7even/vkontakte_api.git'
+
+gem 'omniauth-google-oauth2', :git => 'git://github.com/zquestz/omniauth-google-oauth2'
+
 # gem 'debugger', group: [:development, :test]
+

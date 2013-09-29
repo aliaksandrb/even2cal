@@ -28,6 +28,14 @@ GIT
       railties (>= 3.0, < 4.1)
       slim (~> 2.0)
 
+GIT
+  remote: git://github.com/zquestz/omniauth-google-oauth2
+  revision: 29e03b3013d6e8500bfea4a4a3246975cfd3ddc3
+  specs:
+    omniauth-google-oauth2 (0.2.1)
+      omniauth (~> 1.0)
+      omniauth-oauth2
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -175,6 +183,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
+  omniauth-google-oauth2!
   omniauth-vkontakte!
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)

@@ -9,6 +9,10 @@ class SessionsController < ApplicationController
     #redirect_to root_path
   end
 
+  def google_auth
+    render :text => auth_hash.to_json
+  end
+
   protected
 
   def get_vk_user_events(auth_token)
