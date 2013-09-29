@@ -5,6 +5,6 @@ br
 br
 - if @calendars
   = form_tag sessions_import_events_path, method: 'post' do
-    = select_tag :calendar, options_for_select(@calendars) 
+    = select_tag "calendar_id", options_for_select(@calendars) 
     = submit_tag "Import"
 

@@ -55,5 +55,7 @@ gem 'omniauth-google-oauth2', :git => 'git://github.com/zquestz/omniauth-google-
 
 gem 'google-api-client', :require => 'google/api_client'
 
+gem 'activerecord-session_store', :git => 'git://github.com/rails/activerecord-session_store.git'
+
 # gem 'debugger', group: [:development, :test]
 

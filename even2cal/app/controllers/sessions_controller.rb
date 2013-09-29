@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
   require 'google/api_client'
+  require 'json'
+  require 'date'
 
   def index
     @calendars = get_calendar_list(session[:google][:token]) if session[:google] 
@@ -9,7 +11,6 @@ class SessionsController < ApplicationController
     session[:vkontakte] = {
       token: auth_hash['credentials']['token'],
       events: get_vk_user_events(auth_hash['credentials']['token'])}
-
     redirect_to root_path
   end
 
@@ -20,7 +21,7 @@ class SessionsController < ApplicationController
   end
 
   def import_events
-    import_events_to_calendar(params[:calendar])
+    import_events_to_calendar(params[:calendar_id])
   end
  
   protected
@@ -32,13 +33,34 @@ class SessionsController < ApplicationController
     client.authorization.access_token = session[:google][:token]
     service = client.discovered_api('calendar', 'v3')  
 
-    vk_events = session[:vkontakte][:events]
+    vk_events = [JSON.parse(session[:vkontakte][:events]).first]
     vk_events.each do |event|
+     # prepare_params_from_event(event)
       client.execute(
         api_method: service.events.insert,
-        parameters: prepare_params_from_event(event, calendar_id)
+        parameters: {'calendarId' => calendar_id},
+        body: prepare_params_from_event(event),
+        headers: {'Content-Type' => 'application/json'}
       )
     end
+    redirect_to root_path
+  end
+
+  def prepare_params_from_event(event)
+    result = {
+      'summary' => event["name"],
+      'description' => event["description"],
+      'start' => {
+        'dateTime' => DateTime.parse(Time.at(event["start_date"].to_i).to_s).rfc3339,
+        'timeZone' => 'Europe/Minsk' 
+      },
+      'end' => {
+        'dateTime' => DateTime.parse(Time.at(event["start_date"].to_i + 1800).to_s).rfc3339,
+        'timeZone' => 'Europe/Minsk'
+      }
+    }
+    
+    JSON.dump(result)
   end
 
   def get_calendar_list(auth_token)
