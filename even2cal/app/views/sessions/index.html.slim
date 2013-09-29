@@ -2,3 +2,9 @@ h1 Sessions#index
 = link_to "Login into VK.COM", 'auth/vkontakte'
 br
 = link_to "Login into Google Calendar", 'auth/google'
+br
+- if @calendars
+  = form_tag sessions_import_events_path, method: 'post' do
+    = select_tag :calendar, options_for_select(@calendars) 
+    = submit_tag "Import"
+

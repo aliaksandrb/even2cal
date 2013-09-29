@@ -53,5 +53,7 @@ gem 'vkontakte_api', :git => 'git://github.com/7even/vkontakte_api.git'
 
 gem 'omniauth-google-oauth2', :git => 'git://github.com/zquestz/omniauth-google-oauth2'
 
+gem 'google-api-client', :require => 'google/api_client'
+
 # gem 'debugger', group: [:development, :test]
 

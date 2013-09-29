@@ -1,19 +1,65 @@
 class SessionsController < ApplicationController
+  require 'google/api_client'
+
   def index
-    
+    @calendars = get_calendar_list(session[:google][:token]) if session[:google] 
   end
   
   def vk_auth
-    group_list = get_vk_user_events(auth_hash['credentials']['token'])
-    render :json => group_list
-    #redirect_to root_path
+    session[:vkontakte] = {
+      token: auth_hash['credentials']['token'],
+      events: get_vk_user_events(auth_hash['credentials']['token'])}
+
+    redirect_to root_path
   end
 
   def google_auth
-    render :text => auth_hash.to_json
+    session[:google] = {token: auth_hash['credentials']['token']}
+
+    redirect_to root_path
   end
 
+  def import_events
+    import_events_to_calendar(params[:calendar])
+  end
+ 
   protected
+
+  def import_events_to_calendar(calendar_id)
+    client = Google::APIClient.new(
+      :application_name => "Even2Cal",
+      :application_version => "0.1")
+    client.authorization.access_token = session[:google][:token]
+    service = client.discovered_api('calendar', 'v3')  
+
+    vk_events = session[:vkontakte][:events]
+    vk_events.each do |event|
+      client.execute(
+        api_method: service.events.insert,
+        parameters: prepare_params_from_event(event, calendar_id)
+      )
+    end
+  end
+
+  def get_calendar_list(auth_token)
+    client = Google::APIClient.new(
+      :application_name => "Even2Cal",
+      :application_version => "0.1")
+    client.authorization.access_token = auth_token
+#    service = client.discovered_api('oauth2')
+#    result = client.execute(
+#      :api_method => service.userinfo.get,
+#      :version => 'v3')
+#    result.data.email.to_json
+
+    service = client.discovered_api('calendar', 'v3')
+
+    calendar_list = client.execute(
+      :api_method => service.calendar_list.list,
+      :parameters => {},
+      :headers => {'Content-Type' => 'application/json'})
+    calendar_list.data.items.collect {|cal| [cal.summary, cal.id]}
+  end
 
   def get_vk_user_events(auth_token)
     @vk = VkontakteApi::Client.new(auth_token)
