@@ -35,7 +35,6 @@ class SessionsController < ApplicationController
 
     vk_events = [JSON.parse(session[:vkontakte][:events]).first]
     vk_events.each do |event|
-     # prepare_params_from_event(event)
       client.execute(
         api_method: service.events.insert,
         parameters: {'calendarId' => calendar_id},
@@ -87,15 +86,23 @@ class SessionsController < ApplicationController
     @vk = VkontakteApi::Client.new(auth_token)
     group_fields = ['place', 'description', 'start_date', 'end_date']
 
-    all_groups = @vk.groups.get(extended: 1, fields: group_fields, count: 20)
+    all_groups = @vk.groups.get(extended: 1,
+                                  fields: group_fields,
+                                   count: 20)
     all_groups.shift
-    publics = @vk.groups.get(extended: 1, filter: ['publics'], fields: group_fields, count: 10)
+    publics = @vk.groups.get(extended: 1,
+                               filter: ['publics'],
+                               fields: group_fields,
+                                count: 10)
     publics.shift
-    simple_groups = @vk.groups.get(extended: 1, filter: ['groups'], fields: group_fields, count: 10)
+    simple_groups = @vk.groups.get(extended: 1,
+                                     filter: ['groups'],
+                                     fields: group_fields,
+                                      count: 10)
     simple_groups.shift
     
     events = all_groups - publics - simple_groups
-    events.to_json 
+    events.collect! {|event| Time.at(event["start_date"]) > Time.now}.to_json
   end
 
   def auth_hash
