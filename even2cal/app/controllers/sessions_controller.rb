@@ -16,15 +16,19 @@ class SessionsController < ApplicationController
 
   def google_auth
     session[:google] = {token: auth_hash['credentials']['token']}
-
     flash[:success] = "You have successfully logged in." 
-    redirect_to root_path
+    redirect_to root_path    
   end
 
   def import_events
     import_events_to_calendar(params[:calendar_id])
   end
  
+  def failure
+    flash[:danger] = "Authorization failed."
+    redirect_to root_path
+  end
+
   protected
 
   def import_events_to_calendar(calendar_id)

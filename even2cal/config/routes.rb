@@ -6,6 +6,7 @@ Even2cal::Application.routes.draw do
   
   get '/auth/vkontakte/callback', to: 'sessions#vk_auth'
   get '/auth/google/callback', to: 'sessions#google_auth'
+  get '/auth/failure', to: 'sessions#failure'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
