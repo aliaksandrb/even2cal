@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   require 'date'
 
   def index
-    @calendars = get_calendar_list(session[:google][:token]) if session[:google] 
+    #@calendars = get_calendar_list(session[:google][:token]) if session[:google] 
   end
   
   def vk_auth
