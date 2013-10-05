@@ -17,6 +17,7 @@ class SessionsController < ApplicationController
   def google_auth
     session[:google] = {token: auth_hash['credentials']['token']}
 
+    flash[:success] = "You have successfully logged in." 
     redirect_to root_path
   end
 

@@ -9,9 +9,9 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require_tree 
+ *= require bootstrap
  */
-
 
 body {
   background-image: url(background_pattern.jpg);
@@ -30,6 +30,17 @@ a {
   margin-right: auto;
 }
 
+.flash_messages {
+  height: 30px;
+  width: 570px;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.all_content {
+}
+
 .container {
   width: 600px;
   height: 400px;
@@ -43,7 +54,6 @@ a {
   border-radius: 6px 6px 6px 6px;
   padding-right: 38px;
   padding-left: 38px;
-
 }
 
 .content_block {
@@ -131,3 +141,5 @@ a {
    -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
    box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.3);
    }
+
+
