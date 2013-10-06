@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
   def google_auth
     session[:google] = {token: auth_hash['credentials']['token']}
     flash[:success] = "You have successfully logged in." 
-    redirect_to root_path    
+    redirect_to root_path 
   end
 
   def import_events
@@ -61,10 +61,20 @@ class SessionsController < ApplicationController
       'end' => {
         'dateTime' => DateTime.parse(Time.at(event["start_date"].to_i + 1800).to_s).rfc3339,
         'timeZone' => 'Europe/Minsk'
-      }
+      },
+      'location' => get_event_location(event)
     }
     
     JSON.dump(result)
+  end
+
+  def get_event_location(event)
+    @vk = VkontakteApi::Client.new(session[:vkontakte][:token])
+    country = @vk.places.getCountryById([event["place"]["country"]]).first["name"]
+    city = @vk.places.getCountryById([event["place"]["city"]]).first["title"]
+    address = event["place"]["address"]
+    title = event["place"]["title"]
+    "#{title}, #{country}, #{city}, #{address}"
   end
 
   def get_calendar_list(auth_token)
