@@ -24,7 +24,15 @@ class SessionsController < ApplicationController
   end
 
   def import_events
-    import_events_to_calendar(params[:calendar_id])
+    if vk_authorized
+			import_events_to_calendar(params[:calendar_id])
+	    flash[:success] = "Events was imported! Check out your calendar now." 
+      #render :text => JSON.parse(session[:vkontakte][:events])
+			redirect_to root_path		
+		else
+	    flash[:danger] = "Please authorize VK first!" 
+      redirect_to root_path		
+		end
   end
  
   def failure
@@ -41,7 +49,7 @@ class SessionsController < ApplicationController
     client.authorization.access_token = session[:google][:token]
     service = client.discovered_api('calendar', 'v3')  
 
-    vk_events = [JSON.parse(session[:vkontakte][:events]).first]
+    vk_events = JSON.parse(session[:vkontakte][:events]).first(4)
     vk_events.each do |event|
       client.execute(
         api_method: service.events.insert,
@@ -50,13 +58,12 @@ class SessionsController < ApplicationController
         headers: {'Content-Type' => 'application/json'}
       )
     end
-    redirect_to root_path
   end
 
   def prepare_params_from_event(event)
     result = {
       'summary' => event["name"],
-      'description' => event["description"],
+      'description' => ActionView::Base.full_sanitizer.sanitize(event["description"]),
       'start' => {
         'dateTime' => DateTime.parse(Time.at(event["start_date"].to_i).to_s).rfc3339,
         'timeZone' => 'Europe/Minsk' 
@@ -72,12 +79,12 @@ class SessionsController < ApplicationController
   end
 
   def get_event_location(event)
+		Rails.logger.debug("!!!!!!!!!!!!!!1 #{event} !!!!!!!!!!!!!")
     @vk = VkontakteApi::Client.new(session[:vkontakte][:token])
-    country = @vk.places.getCountryById([event["place"]["country"]]).first["name"]
-    city = @vk.places.getCountryById([event["place"]["city"]]).first["title"]
+    country = @vk.places.getCountryById(:cids => [event["place"]["country"]]).first["name"]
+    city = @vk.places.getCityById(:cids => [event["place"]["city"]]).first["name"]
     address = event["place"]["address"]
-    title = event["place"]["title"]
-    "#{title}, #{country}, #{city}, #{address}"
+    "#{address}, #{city}, #{country}"
   end
 
   def get_calendar_list(auth_token)
@@ -105,18 +112,15 @@ class SessionsController < ApplicationController
     group_fields = ['place', 'description', 'start_date', 'end_date']
 
     all_groups = @vk.groups.get(extended: 1,
-                                  fields: group_fields,
-                                   count: 20)
+                                  fields: group_fields)
     all_groups.shift
     publics = @vk.groups.get(extended: 1,
                                filter: ['publics'],
-                               fields: group_fields,
-                                count: 10)
+                               fields: group_fields)
     publics.shift
     simple_groups = @vk.groups.get(extended: 1,
                                      filter: ['groups'],
-                                     fields: group_fields,
-                                      count: 10)
+                                     fields: group_fields)
     simple_groups.shift
     
     events = all_groups - publics - simple_groups
