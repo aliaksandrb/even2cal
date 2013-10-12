@@ -24,13 +24,18 @@ class SessionsController < ApplicationController
   end
 
 	def groups_listing
-		@event_pairs = JSON.parse(session[:vkontakte][:events]).first(4).each_slice(2).to_a
+		@event_pairs = JSON.parse(session[:vkontakte][:events]).reverse.each_slice(2).to_a
 		render :index 
+	end
+
+	def select_calendar
+    session[:google][:calendar_id] = params[:calendar_id]	
+		groups_listing
 	end
 
   def import_events
     if vk_authorized
-			import_events_to_calendar(params[:calendar_id])
+			import_events_to_calendar(session[:google][:calendar_id], params[:selected_events])
 	    flash[:success] = "Events was imported! Check out your calendar now." 
 			redirect_to root_path		
 		else
@@ -46,14 +51,17 @@ class SessionsController < ApplicationController
 
   protected
 
-  def import_events_to_calendar(calendar_id)
+  def import_events_to_calendar(calendar_id, selected_events_array)
     client = Google::APIClient.new(
       :application_name => "Even2Cal",
       :application_version => "0.1")
     client.authorization.access_token = session[:google][:token]
     service = client.discovered_api('calendar', 'v3')  
 
-    vk_events = JSON.parse(session[:vkontakte][:events]).first(4)
+    vk_events = JSON.parse(session[:vkontakte][:events]).select do |event|
+      selected_events_array.include?(event["gid"].to_s)
+		end
+
     vk_events.each do |event|
       client.execute(
         api_method: service.events.insert,
@@ -83,11 +91,15 @@ class SessionsController < ApplicationController
   end
 
   def get_event_location(event)
-    @vk = VkontakteApi::Client.new(session[:vkontakte][:token])
-    country = @vk.places.getCountryById(:cids => [event["place"]["country"]]).first["name"]
-    city = @vk.places.getCityById(:cids => [event["place"]["city"]]).first["name"]
-    address = event["place"]["address"]
-    "#{address}, #{city}, #{country}"
+		if event["place"]
+      @vk = VkontakteApi::Client.new(session[:vkontakte][:token])
+      country = @vk.places.getCountryById(:cids => [event["place"]["country"]]).first["name"] if event["place"]["country"]
+      city = @vk.places.getCityById(:cids => [event["place"]["city"]]).first["name"] if event["place"]["city"]
+      address = event["place"]["address"] if event["place"]["address"]
+      "#{address}, #{city}, #{country}"
+		else
+		  ""
+		end
   end
 
   def get_calendar_list(auth_token)

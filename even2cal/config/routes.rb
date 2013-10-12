@@ -2,12 +2,14 @@ Even2cal::Application.routes.draw do
   get "sessions/index"
   get "sessions/vk_auth"
   get "sessions/google_auth"
-  post "sessions/import_events"
   get "sessions/groups_listing"
   
   get '/auth/vkontakte/callback', to: 'sessions#vk_auth'
   get '/auth/google/callback', to: 'sessions#google_auth'
   get '/auth/failure', to: 'sessions#failure'
+
+  post "sessions/import_events"
+  post "sessions/select_calendar"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
