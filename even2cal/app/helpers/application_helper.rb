@@ -9,4 +9,5 @@ module ApplicationHelper
       danger: 'alert-danger',
       notice: 'alert-notice'}[flash_type] || flash_type.to_s
   end
+
 end

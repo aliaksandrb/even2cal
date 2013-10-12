@@ -1,11 +1,5 @@
 div class="container"
   div class="content_block"
-    = link_to "Login into VK.COM", 'auth/vkontakte'
+    = render "vk" unless @vkontakte
     br
-    = link_to "Login into Google Calendar", 'auth/google'
-    br
-    - if @calendars
-      = form_tag sessions_import_events_path, method: 'post' do
-        = select_tag "calendar_id", options_for_select(@calendars) 
-        = submit_tag "Import"
-    
+    = render "google" if @google

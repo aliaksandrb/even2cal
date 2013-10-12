@@ -4,19 +4,22 @@ class SessionsController < ApplicationController
   require 'date'
 
   def index
-    #@calendars = get_calendar_list(session[:google][:token]) if session[:google] 
+			@vkontakte = false
+      @google = true
+      @calendars = get_calendar_list(session[:google][:token]) if google_authorized
   end
-  
+
   def vk_auth
     session[:vkontakte] = {
       token: auth_hash['credentials']['token'],
       events: get_vk_user_events(auth_hash['credentials']['token'])}
+    flash[:success] = "You have successfully logged in to VK" 
     redirect_to root_path
   end
 
   def google_auth
     session[:google] = {token: auth_hash['credentials']['token']}
-    flash[:success] = "You have successfully logged in." 
+    flash[:success] = "You have successfully logged in to Google" 
     redirect_to root_path 
   end
 
@@ -117,7 +120,7 @@ class SessionsController < ApplicationController
     simple_groups.shift
     
     events = all_groups - publics - simple_groups
-    events.collect! {|event| Time.at(event["start_date"]) > Time.now}.to_json
+    events.select! {|event| Time.at(event["start_date"].to_i) > Time.now}.to_json
   end
 
   def auth_hash
