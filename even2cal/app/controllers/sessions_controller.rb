@@ -73,6 +73,8 @@ class SessionsController < ApplicationController
   end
 
   def prepare_params_from_event(event)
+		# TIMEZONE STILL HARDCODED
+		# CHECK more easy way of time converting
     result = {
       'summary' => event["name"],
       'description' => ActionView::Base.full_sanitizer.sanitize(event["description"]),
