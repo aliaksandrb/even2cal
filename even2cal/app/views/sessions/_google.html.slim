@@ -9,3 +9,4 @@ br
   = form_tag sessions_import_events_path, method: 'post' do
 	  = select_tag "calendar_id", options_for_select(@calendars, {:class => "selectpicker"}), {"data-style" => "btn-success"} 
       = submit_tag "Import", {class: "btn btn-success"}
+= link_to "Next", 'sessions/groups_listing', {class: "btn btn-success", :name => "next_button"}

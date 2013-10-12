@@ -3,6 +3,7 @@ Even2cal::Application.routes.draw do
   get "sessions/vk_auth"
   get "sessions/google_auth"
   post "sessions/import_events"
+  get "sessions/groups_listing"
   
   get '/auth/vkontakte/callback', to: 'sessions#vk_auth'
   get '/auth/google/callback', to: 'sessions#google_auth'

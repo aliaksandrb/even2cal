@@ -3,3 +3,5 @@ div class="container"
     = render "vk" unless @vkontakte
     br
     = render "google" if @google
+    br 
+    = render "groups_listing" if @event_pairs

@@ -23,11 +23,15 @@ class SessionsController < ApplicationController
     redirect_to root_path 
   end
 
+	def groups_listing
+		@event_pairs = JSON.parse(session[:vkontakte][:events]).first(4).each_slice(2).to_a
+		render :index 
+	end
+
   def import_events
     if vk_authorized
 			import_events_to_calendar(params[:calendar_id])
 	    flash[:success] = "Events was imported! Check out your calendar now." 
-      #render :text => JSON.parse(session[:vkontakte][:events])
 			redirect_to root_path		
 		else
 	    flash[:danger] = "Please authorize VK first!" 
@@ -79,7 +83,6 @@ class SessionsController < ApplicationController
   end
 
   def get_event_location(event)
-		Rails.logger.debug("!!!!!!!!!!!!!!1 #{event} !!!!!!!!!!!!!")
     @vk = VkontakteApi::Client.new(session[:vkontakte][:token])
     country = @vk.places.getCountryById(:cids => [event["place"]["country"]]).first["name"]
     city = @vk.places.getCityById(:cids => [event["place"]["city"]]).first["name"]
@@ -92,11 +95,6 @@ class SessionsController < ApplicationController
       :application_name => "Even2Cal",
       :application_version => "0.1")
     client.authorization.access_token = auth_token
-#    service = client.discovered_api('oauth2')
-#    result = client.execute(
-#      :api_method => service.userinfo.get,
-#      :version => 'v3')
-#    result.data.email.to_json
 
     service = client.discovered_api('calendar', 'v3')
 
@@ -108,19 +106,23 @@ class SessionsController < ApplicationController
   end
 
   def get_vk_user_events(auth_token)
+#   DO NOT FORGET TO REMOVE COUNTER LIMITS
     @vk = VkontakteApi::Client.new(auth_token)
     group_fields = ['place', 'description', 'start_date', 'end_date']
 
     all_groups = @vk.groups.get(extended: 1,
-                                  fields: group_fields)
+                                  fields: group_fields,
+															    count: 30)
     all_groups.shift
     publics = @vk.groups.get(extended: 1,
                                filter: ['publics'],
-                               fields: group_fields)
+                               fields: group_fields,
+														   count: 10)
     publics.shift
     simple_groups = @vk.groups.get(extended: 1,
                                      filter: ['groups'],
-                                     fields: group_fields)
+                                     fields: group_fields,
+																		 count: 10)
     simple_groups.shift
     
     events = all_groups - publics - simple_groups
