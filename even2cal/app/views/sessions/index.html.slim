@@ -1,5 +1,7 @@
 div class="container"
   div class="content_block"
+    = link_to "Logout", "sessions/logout" 
+    br
     = render "vk" unless @vkontakte
     br
     = render "google" if @google

@@ -49,6 +49,12 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
+  def logout
+    reset_session
+	  flash[:success] = "Logged out!" 
+    redirect_to root_path
+  end
+
   protected
 
   def import_events_to_calendar(calendar_id, selected_events_array)
