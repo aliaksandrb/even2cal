@@ -56,18 +56,20 @@ body, html {
 }
 
 .content {
-  position: absolute;
+  position: relative;
   z-index:  2;
   left:     50%;
 }
 
 #login_link_vk {
+  position:    absolute;
   padding-top: 750px;
   font-size:   50px;
   font-weight: bold;
 }
 
 #login_link_google {
+  position:    absolute;
   padding-top: 550px;
   font-size:   50px;
   font-weight: bold;
@@ -120,6 +122,7 @@ body, html {
   -moz-background-size:    cover;
   -o-background-size:      cover;
   background-size:         cover;
+  z-index: 1;
 }
 
 #slide2 {
@@ -158,6 +161,71 @@ body, html {
   background-size:         cover;
 }
 
+#slide1 img:first-child{
+  position: absolute;
+  top:      350px;
+  left:     100px;
+}
+
+#slide1 img:nth-child(2){
+  position: absolute;
+  top:      500px;
+  right:    300px;
+}
+
+#slide2 img:first-child{
+  position: absolute;
+  top:      350px;
+  left:     250px;
+}
+
+#slide2 img:nth-child(2){
+  position: absolute;
+  top:      250px;
+  right:    100px;
+}
+
+#slide2 img:nth-child(3){
+  position: absolute;
+  top:      400px;
+  right:    350px;
+}
+
+#slide3 img:first-child{
+  position: absolute;
+  top:      400px;
+  left:     120px;
+}
+
+#slide3 img:nth-child(2){
+  position: absolute;
+  top:      100px;
+  right:    200px;
+}
+
+#slide3 img:nth-child(3){
+  position: absolute;
+  top:      580px;
+  left:     10px;
+}
+
+#slide4 img:first-child{
+  position: absolute;
+  top:      200px;
+  left:     750px;
+}
+
+#slide4 img:nth-child(2){
+  position: absolute;
+  top:      500px;
+  right:    150px;
+}
+
+#slide4 img:nth-child(3){
+  position: absolute;
+  top:      180px;
+  left:     5px;
+}
 /*
 .slide span{
 	bottom: 0;

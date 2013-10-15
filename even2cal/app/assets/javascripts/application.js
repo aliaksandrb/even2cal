@@ -32,7 +32,6 @@ jQuery(document).ready(function ($) {
     button = $('.button');
     mywindow = $(window);
     htmlbody = $('html,body');
-
     //Установка плагина waypoints
     slide.waypoint(function (event, direction) {
 
