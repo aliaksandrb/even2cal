@@ -14,10 +14,191 @@
  *= require bootstrap-select.min
  */
 
+/*
 body {
   background-image: url(background_pattern.jpg);
   color: white;
 }
+*/
+
+body, html {
+  height: 100%;
+  width:  100%;
+}
+
+.navigation {
+  position: fixed;
+  z-index:  1;
+  top:      20px;
+}
+
+.navigation li {
+  color:              #333333;
+  display:            block;
+  padding:            0 10px;
+  line-height:        30px;
+  margin-bottom:      2px;
+  font-weight:        bold;
+  -webkit-transition: all .2s ease-in-out;
+  border-bottom:      1px solid black;
+  text-align:         left;
+  width:              120px;
+}
+
+.navigation li:hover, .active {
+  font-size: 25px;
+  cursor:    pointer;
+  width:     100px!important;
+}
+
+#wrapper {
+  position: relative;
+}
+
+.content {
+  position: absolute;
+  z-index:  2;
+  left:     50%;
+}
+
+#login_link_vk {
+  padding-top: 750px;
+  font-size:   50px;
+  font-weight: bold;
+}
+
+#login_link_google {
+  padding-top: 550px;
+  font-size:   50px;
+  font-weight: bold;
+}
+
+.logo {
+  display:  block;
+  position: fixed;
+  top:      5%;
+  left:     50%;
+  /*width:  446px;*/
+  z-index:  1;
+}
+
+.button {
+  z-index:          2;
+  display:          block;
+  width:            50px;
+  height:           50px;
+  position:         absolute;
+  bottom:           0px;
+  left:             50%;
+  background-color: #333333;
+  background-image: url(arrow.png);
+  background-repeat: no-repeat;
+}
+
+.button:hover {
+  background-color: #494949;
+  cursor:           pointer;
+}
+
+.slide {
+	background-attachment: fixed;
+	background-position:   50% 0;
+	background-repeat:     no-repeat;
+  width:                 70%;
+  height:                100%;
+  position:              relative;
+  box-shadow:            inset 0px 10px 10px rgba(0,0,0,0.3);
+}
+  
+#slide1 {
+  background-image:        url(wall1.jpg);
+  color:                   white;
+  margin:                  0 auto;
+  overflow:                hidden;
+  padding:                 0;
+  -webkit-background-size: cover;
+  -moz-background-size:    cover;
+  -o-background-size:      cover;
+  background-size:         cover;
+}
+
+#slide2 {
+  background-image:        url(wall2.jpg);
+  color:                   white;
+  margin:                  0 auto;
+  overflow:                hidden;
+  padding:                 0;
+  -webkit-background-size: cover;
+  -moz-background-size:    cover;
+  -o-background-size:      cover;
+  background-size:         cover;
+}
+
+#slide3 {
+  background-image:        url(wall3.jpg);
+  color:                   white;
+  margin:                  0 auto;
+  overflow:                hidden;
+  padding:                 0;
+  -webkit-background-size: cover;
+  -moz-background-size:    cover;
+  -o-background-size:      cover;
+  background-size:         cover;
+}
+
+#slide4 {
+  background-image:        url(wall4.jpg);
+  color:                   white;
+  margin:                  0 auto;
+  overflow:                hidden;
+  padding:                 0;
+  -webkit-background-size: cover;
+  -moz-background-size:    cover;
+  -o-background-size:      cover;
+  background-size:         cover;
+}
+
+/*
+.slide span{
+	bottom: 0;
+	color: white;
+	display: block;
+	left: 50%;
+	margin-left: -640px;
+	font-size: 38px;
+	padding: 10px;
+	position: absolute;
+	text-shadow: 0 2px 0 black, 0 0 10px black;
+	width: 280px;
+/* font-size:50px;
+  left: 50%;
+  font-weight:bold;
+  bottom: 50%;
+  position:absolute;
+  color:rgba(51,51,51,0.3);
+}
+/*
+#second .bg{
+  background: url(images/trainers.png) 50% 0 no-repeat fixed;
+  height: 1300px;
+  margin: 0 auto;
+  padding: 0;
+  position: absolute;
+  width: 900px;
+  z-index: 200;
+}
+*/
+
+/*
+#third .link{
+  position:absolute;
+  font-size:50px;
+  left: 50%;
+  font-weight:bold;
+  bottom: 50%;
+  color:rgba(51,51,51,0.3);
+}
+*/
 
 a {
   color: white;

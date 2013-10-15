@@ -7,18 +7,34 @@ html
     = csrf_meta_tags
 
 body
-  div class="flash_messages"
-    = render partial: "layouts/flash_messages", flash: flash 
-  div class="all_content"
-    div class="centered_container"
-      div class="ribbon"
-        div class="ribbon-stitches-top"
-        div class="ribbon-content"
-				  h1
-				    = link_to 'Event to Calendar', root_path
-        div class="ribbon-stitches-bottom"
+  /div class="flash_messages"
+    /= render partial: "layouts/flash_messages", flash: flash 
 
+  /div class="all_content"
+     div class="centered_container"
+  /div class="logo"
+    div class="ribbon"
+      div class="ribbon-stitches-top"
+      div class="ribbon-content"
+   	  h1
+   	    = link_to 'Event to Calendar', root_path
+      div class="ribbon-stitches-bottom"
+
+  <ul class="navigation">
+    <li class="" data-slide="1">HOME</li>
+    <li class="" data-slide="2">SIGN VK</li>
+    <li class=""  data-slide="3">SIGN gCalendar</li>
+    <li class="" data-slide="4">IMPORT</li>
+  </ul>
+
+  div class="content"
     = yield
 
-footer
-  hr
+  div id="slide1" class="slide" data-slide="1" data-stellar-background-ratio="0.5"
+    <a class="button" data-slide="2" title=""></a>
+  div id="slide2" class="slide" data-slide="2" data-stellar-background-ratio="0.5"
+    <a class="button" data-slide="3" title=""></a>
+  div id="slide3" class="slide" data-slide="3" data-stellar-background-ratio="0.5"
+    <a class="button" data-slide="4" title=""></a>
+  div id="slide4" class="slide" data-slide="3" data-stellar-background-ratio="0.5"
+
