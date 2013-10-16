@@ -1,19 +1,20 @@
-= form_tag sessions_import_events_path do
-  div class="grid"
-    - @event_pairs.each do |pair|
-      div class="row"
-        - pair.each do |event|
-          div class="col-xs-6"
-            p
-              = Time.at(event['start_date'].to_i).to_s(:short)
-            div class="thumbnail"
-              = image_tag event["photo_medium"]
-            div class="caption"
-              h3
-        			  = "#{event['name'].first(37)}..."
+div id="events_list"
+  = form_tag sessions_import_events_path do
+    div class="grid"
+      - @event_pairs.each do |pair|
+        div class="row"
+          - pair.each do |event|
+            div class="col-xs-6"
               p
-                = "#{event['description'].first(97)}..."
-              p
-                = check_box_tag "selected_events[]", event["gid"], class: "checkbox"
-                = label_tag "checkbox", "select for import", class: "label"
-  = submit_tag "Import", {class: "btn btn-success"}
+                = Time.at(event['start_date'].to_i).to_s(:short)
+              div class="thumbnail"
+               = image_tag event["photo_medium"]
+              div class="caption"
+                h3
+          			  = "#{event['name'].first(37)}..."
+                p
+                  = "#{event['description'].first(97)}..."
+                p
+                  = check_box_tag "selected_events[]", event["gid"], class: "checkbox"
+                  = label_tag "checkbox", "select for import", class: "label"
+    = submit_tag "Import", {class: "btn btn-success"}

@@ -1,14 +1,21 @@
-div id="login_link_google2"
-  = link_to "Sign in gCalendar", 'auth/google'
-- if !@calendars.blank?
-  = form_tag sessions_select_calendar_path do
-	  = select_tag "calendar_id", options_for_select(@calendars, {:class => "selectpicker"}), {"data-style" => "btn-success"} 
-      = submit_tag "Select calendar to import", {class: "btn btn-success"}
-
-
 javascript:
   $( document ).ready(function(){
     $('select').selectpicker();
   });
 
+div id="google_container"
+  header
+    h1
+      = link_to "Sign in gCalendar", 'auth/google'
+  p
+    | We need your authentication to get calendars list.
+    br /
+    | You can choose one that used for import after.
+
+- if !@calendars.blank?
+  div id="google_container_calendar"
+    = form_tag sessions_select_calendar_path do
+  	  = select_tag "calendar_id", options_for_select(@calendars, {:class => "selectpicker"}), {"data-style" => "btn-success"} 
+      = submit_tag "Select calendar to import", {class: "btn btn-success"}
+    
 

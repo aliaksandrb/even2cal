@@ -1,2 +1,10 @@
-div id="login_link_vk2"
-  = link_to "Sign in VK", 'auth/vkontakte'
+div id="vk_container"
+  header
+    h1
+      = link_to "Sign in VK", 'auth/vkontakte'
+  p
+    | Authentication required to get your events data.
+    br /
+    | It would be available at the current session only.
+    br /
+    | We are not saving your data. Promise.
