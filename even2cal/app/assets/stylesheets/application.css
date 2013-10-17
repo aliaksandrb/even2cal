@@ -12,6 +12,7 @@
  *= require_tree 
  *= require bootstrap
  *= require bootstrap-select.min
+ *= require simplePagination
  */
 
 /*
@@ -78,12 +79,14 @@ body, html {
   height:                100%;
   position:              relative;
   box-shadow:            inset 0px 10px 10px rgba(0,0,0,0.3);
+  min-width:             1035px;
+  margin:                0 180px 0;
+  display:               block;
 }
   
 #slide1 {
   background-image:        url(wall1.jpg);
   color:                   white;
-  margin:                  0 auto;
   overflow:                hidden;
   padding:                 0;
   -webkit-background-size: cover;
@@ -95,7 +98,6 @@ body, html {
 #slide2 {
   background-image:        url(wall2.jpg);
   color:                   white;
-  margin:                  0 auto;
   overflow:                hidden;
   padding:                 0;
   -webkit-background-size: cover;
@@ -107,7 +109,6 @@ body, html {
 #slide3 {
   background-image:        url(wall3.jpg);
   color:                   white;
-  margin:                  0 auto;
   overflow:                hidden;
   padding:                 0;
   -webkit-background-size: cover;
@@ -119,7 +120,6 @@ body, html {
 #slide4 {
   background-image:        url(wall4.jpg);
   color:                   white;
-  margin:                  0 auto;
   overflow:                hidden;
   padding:                 0;
   -webkit-background-size: cover;
@@ -284,8 +284,10 @@ body, html {
 }
 
 .content {
-  position: relative;
-  z-index:  10;
+  position:  relative;
+  z-index:   10;
+  display:   block;
+  min-width: 1035px;
 }
 
 #vk_container {

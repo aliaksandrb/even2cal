@@ -1,3 +1,14 @@
+javascript:
+  $( document ).ready(function(){
+      $('.ololo').pagination({
+          items: 6, 
+          itemsOnPage: 1,
+          cssStyle: 'light-theme'
+      });
+      $('.ololo').pagination('selectPage', 2);
+  });
+
+
 div id="events_list"
   = form_tag sessions_import_events_path do
     div class="grid"
@@ -18,3 +29,14 @@ div id="events_list"
                   = check_box_tag "selected_events[]", event["gid"], class: "checkbox"
                   = label_tag "checkbox", "select for import", class: "label"
     = submit_tag "Import", {class: "btn btn-success"}
+
+  ul class="ololo"
+    li class=""
+      p HOME
+    li class=""
+      p SIGN VK
+    li class=""
+      p SIGN gCalendar
+    li class=""
+      p IMPORT
+

@@ -20,6 +20,7 @@
 //= require jquery.easing.min
 //= require jquery.stellar.min
 //= require waypoints.min
+//= require jquery.simplePagination
 
 jQuery(document).ready(function ($) {
 
