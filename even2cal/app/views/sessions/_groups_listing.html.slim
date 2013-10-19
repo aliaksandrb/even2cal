@@ -1,13 +1,13 @@
 div id="events_list"
   = form_tag sessions_import_events_path do
     div class="grid"
-      div id="content"
+      div class="row"
+        div id="events_content"
     = submit_tag "Import", {class: "btn btn-success"}
   div class="page-selection"
 
-div id="ololo"
+div id="hidden_content"
   - @event_pairs.each do |event|
-    div class="row"
       div class="col-xs-6"
         p
           = Time.at(event['start_date'].to_i).to_s(:short)
@@ -25,9 +25,9 @@ div id="ololo"
 
 javascript:
   $( document ).ready(function(){
-    var array = $('.row');
-    $("#content").append(array[0]);
-    $("#content").append(array[1]);
+    var array = $('.col-xs-6');
+    $("#events_content").append(array[0]);
+    $("#events_content").append(array[1]);
     var pagesNumber = #{@event_pairs.size % 2 == 0 ? @event_pairs.size / 2 : @event_pairs.size / 2 + 1};
     $('.page-selection').bootpag({
       total: pagesNumber, 
@@ -39,7 +39,7 @@ javascript:
         } else {
           $(v).hide();
         }
-        $("#content").append(v);
+        $("#events_content").append(v);
       });
     });
   });

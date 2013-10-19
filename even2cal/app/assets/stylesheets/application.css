@@ -88,7 +88,7 @@ body, html {
 }
   
 #slide1 {
-  background-image:        url(wall1.jpg);
+  background-image:        url(wall11.png);
   color:                   white;
   overflow:                hidden;
   padding:                 0;
@@ -99,7 +99,7 @@ body, html {
 }
 
 #slide2 {
-  background-image:        url(wall2.jpg);
+  background-image:        url(wall11.png);
   color:                   white;
   overflow:                hidden;
   padding:                 0;
@@ -110,7 +110,7 @@ body, html {
 }
 
 #slide3 {
-  background-image:        url(wall3.jpg);
+  background-image:        url(wall11.png);
   color:                   white;
   overflow:                hidden;
   padding:                 0;
@@ -121,7 +121,7 @@ body, html {
 }
 
 #slide4 {
-  background-image:        url(wall4.jpg);
+  background-image:        url(wall11.png);
   color:                   white;
   overflow:                hidden;
   padding:                 0;
@@ -355,7 +355,7 @@ body, html {
   margin: 10px 10px 10px;
 }
 
-#ololo{
+#hidden_content{
   display: none;
 }
 
@@ -365,9 +365,9 @@ body, html {
   border-radius: 16px 16px 16px 16px;
   z-index:       10;
   top:           2400px;
-  left:          260px;
+  left:          210px;
   width:         550px;
-  height:        800px;
+  height:        550px;
   text-align:    left;
 }
 
