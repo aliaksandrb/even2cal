@@ -12,7 +12,6 @@
  *= require_tree 
  *= require bootstrap
  *= require bootstrap-select.min
- *= require simplePagination
  */
 
 /*
@@ -21,6 +20,10 @@ body {
   color: white;
 }
 */
+
+.ololo {
+  display: none;
+}
 
 /* ### PARALLAX MAGIC ### */
 body, html {
@@ -350,6 +353,10 @@ body, html {
 
 #google_container_calendar .btn-group {
   margin: 10px 10px 10px;
+}
+
+#ololo{
+  display: none;
 }
 
 #events_list {

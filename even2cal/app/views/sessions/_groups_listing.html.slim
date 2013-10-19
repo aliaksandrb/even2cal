@@ -1,42 +1,43 @@
-javascript:
-  $( document ).ready(function(){
-      $('.ololo').pagination({
-          items: 6, 
-          itemsOnPage: 1,
-          cssStyle: 'light-theme'
-      });
-      $('.ololo').pagination('selectPage', 2);
-  });
-
-
 div id="events_list"
   = form_tag sessions_import_events_path do
     div class="grid"
-      - @event_pairs.each do |pair|
-        div class="row"
-          - pair.each do |event|
-            div class="col-xs-6"
-              p
-                = Time.at(event['start_date'].to_i).to_s(:short)
-              div class="thumbnail"
-               = image_tag event["photo_medium"]
-              div class="caption"
-                h3
-          			  = "#{event['name'].first(37)}..."
-                p
-                  = "#{event['description'].first(97)}..."
-                p
-                  = check_box_tag "selected_events[]", event["gid"], class: "checkbox"
-                  = label_tag "checkbox", "select for import", class: "label"
+      div id="content"
     = submit_tag "Import", {class: "btn btn-success"}
+  div class="page-selection"
 
-  ul class="ololo"
-    li class=""
-      p HOME
-    li class=""
-      p SIGN VK
-    li class=""
-      p SIGN gCalendar
-    li class=""
-      p IMPORT
+div id="ololo"
+  - @event_pairs.each do |event|
+    div class="row"
+      div class="col-xs-6"
+        p
+          = Time.at(event['start_date'].to_i).to_s(:short)
+        div class="thumbnail"
+         = image_tag event["photo_medium"]
+        div class="caption"
+          h3
+    			  = "#{event['name'].first(37)}..."
+          p
+            = "#{event['description'].first(97)}..."
+          p
+            = check_box_tag "selected_events[]", event["gid"], class: "checkbox"
+            = label_tag "checkbox", "select for import", class: "label"
+
+
+javascript:
+  $( document ).ready(function(){
+    var array = $('.row');
+    $('.page-selection').bootpag({
+      total: 3, 
+      current: 1
+    }).on("page", function(event, num){
+      $.each(array, function(i, v){
+        if (i != num-1){
+          $(v).hide();
+        } else {
+          $(v).show();
+        }
+        $("#content").append(v);
+      });
+    });
+  });
 

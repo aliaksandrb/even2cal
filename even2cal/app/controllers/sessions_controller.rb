@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
   end
 
 	def groups_listing
-		@event_pairs = JSON.parse(session[:vkontakte][:events]).reverse.each_slice(2).to_a
+		@event_pairs = JSON.parse(session[:vkontakte][:events]).reverse.to_a
 		render :index 
 	end
 
