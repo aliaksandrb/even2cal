@@ -26,15 +26,18 @@ div id="ololo"
 javascript:
   $( document ).ready(function(){
     var array = $('.row');
+    $("#content").append(array[0]);
+    $("#content").append(array[1]);
+    var pagesNumber = #{@event_pairs.size % 2 == 0 ? @event_pairs.size / 2 : @event_pairs.size / 2 + 1};
     $('.page-selection').bootpag({
-      total: 3, 
+      total: pagesNumber, 
       current: 1
     }).on("page", function(event, num){
       $.each(array, function(i, v){
-        if (i != num-1){
-          $(v).hide();
-        } else {
+        if ((i == num*2-2) || (i == num*2-1)){
           $(v).show();
+        } else {
+          $(v).hide();
         }
         $("#content").append(v);
       });
