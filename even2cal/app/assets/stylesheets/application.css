@@ -313,8 +313,7 @@ body, html {
 
 .intro {
   padding:       0 10px 10px;
-  font-family:   Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
-  top:           280px;
+  top:           290px;
   left:          220px;
   position:      absolute;
 }
@@ -324,7 +323,7 @@ body, html {
   border-radius: 16px 16px 16px 16px;
   z-index:       10;
   width:         310px;
-  height:        250px;
+  height:        190px;
   text-align:    left;
 }
 
@@ -333,7 +332,7 @@ body, html {
   border-radius: 16px 16px 16px 16px;
   z-index:       10;
   width:         310px;
-  height:        250px;
+  height:        190px;
   text-align:    left;
 }
 
@@ -342,20 +341,18 @@ body, html {
   border-radius: 16px 16px 16px 16px;
   z-index:       10;
   width:         310px;
-  height:        250px;
+  height:        190px;
   text-align:    left;
 }
 
 .intro h1 {
-  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
-  font-size:   60px;
+  font-size:   40px;
   color:       rgb(33, 169, 126);
-  margin:      0px 10px 30px;
+  margin:      0px 10px 15px;
 }
 
 .intro p {
-  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
-  font-size:   20px;
+  font-size:   15px;
   margin:      0px 10px 0px;
 }
 
@@ -387,30 +384,23 @@ body, html {
 
 #introduction_container2 {
   background:    url("wash-white.png") repeat scroll 0% 0% transparent;
-  font-family:   Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
   position:      absolute;
   border-radius: 16px 16px 16px 16px;
   z-index:       10;
   top:           140px;
-  left:          635px;
-  width:         560px;
-  height:        45px;
+  left:          625px;
+  width:         610px;
+  height:        25px;
   text-align:    left;
 }
 
 #introduction_container2 h1 a{
   color:       rgb(33, 169, 126);
 }
-#introduction_container2 h1 {
-  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
-  font-size:   40px;
-  margin:      0px 10px 30px;
-}
 
-#introduction_container2 p {
-  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
+#introduction_container2 h1 {
   font-size:   20px;
-  margin:      0px 10px 0px;
+  margin:      0px 10px 30px;
 }
 
 #vk_container {

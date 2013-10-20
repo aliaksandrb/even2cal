@@ -5,7 +5,7 @@
 div id="introduction_container2"
   header
     h1
-      | Easy import of your #{link_to "VK", "https://vk.com/"} events to #{link_to "Google Calendar", "https://www.google.com/calendar/"}! 
+      | Легкий импорт ваших событий #{link_to "Вконтакте", "https://vk.com/"} в #{link_to "Google календарь", "https://www.google.com/calendar/"}! 
 
 div class="intro"
   div class="grid"
@@ -14,23 +14,29 @@ div class="intro"
         div id="intro_block1"
           header
             h1
-              | 3
+              | Проблема 
           p
-            | Test1
+            | Вас часто приглашают на интересные мероприятия, но вы их пропускаете, так как редко проверяете свой аккаунт в Вконтакте? 
+          p
+            | Время положить этому конец!
       div class="col-md-4"
         div id="intro_block2"
           header
             h1
-              | Easy
+              | Идея
           p
-            | Test2
+            | Переносите свои события в календарь Google и используйте все преимущества данного сервиса с пользой!
+          p
+            | (Напоминания, смс-оповещения и синхронизация с вашими Android устройствами.)
       div class="col-md-4"
         div id="intro_block3"
           header
             h1
-              | Steps
+              | Решение
           p
-            | Test3
+            | Всего 3 простых шага и ваши события больше не затеряются.
+          p
+            | Не забывайте об интересном!
 
 = render "vk" unless @vkontakte
 = render "google" if @google
