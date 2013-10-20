@@ -21,7 +21,7 @@
 //= require jquery.stellar.min
 //= require waypoints.min
 //= require jquery.bootpag.min
-
+//= require vk_openapi
 jQuery(document).ready(function ($) {
 
     $(window).stellar();

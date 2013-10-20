@@ -81,7 +81,6 @@ body, html {
 }
 
 .slide {
-
 	background-attachment: fixed;
 	background-position:   50% 0;
 	background-repeat:     no-repeat;
@@ -232,7 +231,7 @@ body, html {
 .logo_title{
   display:     block;
   position:    absolute;
-  top:         1%;
+  top:         20px;
   left:        45%;
   color:       rgb(33, 169, 126);
 	text-shadow: 0 2px 0 black, 0 0 10px black;
@@ -387,7 +386,7 @@ body, html {
   position:      absolute;
   border-radius: 16px 16px 16px 16px;
   z-index:       10;
-  top:           140px;
+  top:           150px;
   left:          625px;
   width:         610px;
   height:        25px;
@@ -405,7 +404,6 @@ body, html {
 
 #vk_container {
   background:    url("wash-white.png") repeat scroll 0% 0% transparent;
-  font-family:   Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
   position:      absolute;
   border-radius: 16px 16px 16px 16px;
   z-index:       10;
@@ -417,20 +415,17 @@ body, html {
 }
 
 #vk_container h1 a {
-  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
   font-size:   60px;
   color:       rgb(33, 169, 126);
   margin:      0px 10px 30px;
 }
 
 #vk_container p {
-  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
   font-size:   20px;
   margin:      0px 10px 0px;
 }
 
 #google_container {
-  font-family:   Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
   background:    url("wash-white.png") repeat scroll 0% 0% transparent;
   position:      absolute;
   border-radius: 16px 16px 16px 16px;
@@ -443,20 +438,17 @@ body, html {
 }
 
 #google_container h1 a {
-  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
   font-size:   60px;
   color:       rgb(33, 169, 126);
   margin:      0px 10px 30px;
 }
 
 #google_container p {
-  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
   font-size:   20px;
   margin:      0px 10px 0px;
 }
 
 #google_container_calendar {
-  font-family:   Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
   background:    url("wash-white.png") repeat scroll 0% 0% transparent;
   position:      absolute;
   border-radius: 16px 16px 16px 16px;
@@ -469,7 +461,6 @@ body, html {
 }
 
 #google_container_calendar .btn-group {
-  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
   margin:      10px 10px 10px;
 }
 
@@ -478,7 +469,6 @@ body, html {
 }
 
 #events_list {
-  font-family:   Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
   background:    url("wash-white.png") repeat scroll 0% 0% transparent;
   position:      absolute;
   border-radius: 16px 16px 16px 16px;
@@ -491,17 +481,54 @@ body, html {
 }
 
 #events_list h3 {
-  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
   font-size:   30px;
   color:       rgb(33, 169, 126);
   margin:      0px 10px 30px;
 }
 
 #events_list p {
-  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
   font-size:   15px;
   margin:      0px 10px 0px;
 }
+
+
+#top_bar {
+  height:           20px;
+  min-width:        1035px;
+  position:         relative;
+  background-color: rgb(51, 51, 51);
+  color:            rgb(33, 169, 126);
+  text-align:       right;
+}
+
+#top_bar span a {
+  color: rgb(33, 169, 126);
+  padding: 5px;
+  font-weight: bold;
+}
+
+#footer {
+  height:           100px;
+  width:            500px;
+  top: 645px;
+  position:         relative;
+  background-color: rgb(51, 51, 51);
+  color:            rgb(33, 169, 126);
+  text-align:      center;
+}
+
+#footer .gradient {
+  border-bottom: 2px dotted rgb(33, 169, 126);
+  padding: 0 0 20px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#footer span a {
+  color: rgb(33, 169, 126);
+}
+
 /* ### CSS Label styling ###*/
 .ribbon {
    width: 300px;

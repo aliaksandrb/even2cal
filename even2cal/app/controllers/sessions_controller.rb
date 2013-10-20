@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 		@vkontakte = false
     @google = true
     @calendars = get_calendar_list(session[:google][:token]) if google_authorized
-    @activePage = flash[:page] if flash[:page]
+    @activePage = flash[:page] ? flash[:page] : 0
   end
 
   def vk_auth
