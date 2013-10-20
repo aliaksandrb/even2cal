@@ -2,9 +2,35 @@
   div class="content_block"
 /= link_to "Logout", "sessions/logout" 
 
-div id="introduction_container"
-  | Hello world!
+div id="introduction_container2"
+  header
+    h1
+      | Easy import of your #{link_to "VK", "https://vk.com/"} events to #{link_to "Google Calendar", "https://www.google.com/calendar/"}! 
 
+div class="intro"
+  div class="grid"
+    div class="row"
+      div class="col-md-4"
+        div id="intro_block1"
+          header
+            h1
+              | 3
+          p
+            | Test1
+      div class="col-md-4"
+        div id="intro_block2"
+          header
+            h1
+              | Easy
+          p
+            | Test2
+      div class="col-md-4"
+        div id="intro_block3"
+          header
+            h1
+              | Steps
+          p
+            | Test3
 
 = render "vk" unless @vkontakte
 = render "google" if @google

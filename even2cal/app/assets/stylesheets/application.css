@@ -81,6 +81,7 @@ body, html {
 }
 
 .slide {
+
 	background-attachment: fixed;
 	background-position:   50% 0;
 	background-repeat:     no-repeat;
@@ -139,13 +140,13 @@ body, html {
 
 #slide1 img:first-child{
   position: absolute;
-  top:      350px;
+  top:      70px;
   left:     100px;
 }
 
 #slide1 img:nth-child(2){
   position: absolute;
-  top:      500px;
+  top:      550px;
   right:    300px;
 }
 
@@ -231,7 +232,7 @@ body, html {
 .logo_title{
   display:     block;
   position:    absolute;
-  top:         2%;
+  top:         1%;
   left:        45%;
   color:       rgb(33, 169, 126);
 	text-shadow: 0 2px 0 black, 0 0 10px black;
@@ -310,27 +311,103 @@ body, html {
   min-width: 1035px;
 }
 
-#introduction_container {
-  background:    url("wash-white.png") repeat scroll 0% 0% transparent;
+.intro {
+  padding:       0 10px 10px;
   font-family:   Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
+  top:           280px;
+  left:          220px;
   position:      absolute;
+}
+
+#intro_block1 {
+  background:    url("wash-white.png") repeat scroll 0% 0% transparent;
   border-radius: 16px 16px 16px 16px;
   z-index:       10;
-  top:           1000px;
-  left:          310px;
-  width:         450px;
-  height:        200px;
+  width:         310px;
+  height:        250px;
   text-align:    left;
 }
 
-#introduction_container h1 a {
+#intro_block2 {
+  background:    url("wash-white.png") repeat scroll 0% 0% transparent;
+  border-radius: 16px 16px 16px 16px;
+  z-index:       10;
+  width:         310px;
+  height:        250px;
+  text-align:    left;
+}
+
+#intro_block3 {
+  background:    url("wash-white.png") repeat scroll 0% 0% transparent;
+  border-radius: 16px 16px 16px 16px;
+  z-index:       10;
+  width:         310px;
+  height:        250px;
+  text-align:    left;
+}
+
+.intro h1 {
   font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
   font-size:   60px;
   color:       rgb(33, 169, 126);
   margin:      0px 10px 30px;
 }
 
-#introduction_container p {
+.intro p {
+  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
+  font-size:   20px;
+  margin:      0px 10px 0px;
+}
+
+#introduction_container1 {
+  background:    url("wash-white.png") repeat scroll 0% 0% transparent;
+  font-family:   Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
+  position:      absolute;
+  border-radius: 16px 16px 16px 16px;
+  z-index:       10;
+  top:           420px;
+  left:          310px;
+  width:         450px;
+  height:        200px;
+  text-align:    left;
+}
+
+#introduction_container1 h1 {
+  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
+  font-size:   60px;
+  color:       rgb(33, 169, 126);
+  margin:      0px 10px 30px;
+}
+
+#introduction_container1 p {
+  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
+  font-size:   20px;
+  margin:      0px 10px 0px;
+}
+
+#introduction_container2 {
+  background:    url("wash-white.png") repeat scroll 0% 0% transparent;
+  font-family:   Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
+  position:      absolute;
+  border-radius: 16px 16px 16px 16px;
+  z-index:       10;
+  top:           140px;
+  left:          635px;
+  width:         560px;
+  height:        45px;
+  text-align:    left;
+}
+
+#introduction_container2 h1 a{
+  color:       rgb(33, 169, 126);
+}
+#introduction_container2 h1 {
+  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
+  font-size:   40px;
+  margin:      0px 10px 30px;
+}
+
+#introduction_container2 p {
   font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
   font-size:   20px;
   margin:      0px 10px 0px;
