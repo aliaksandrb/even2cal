@@ -36,9 +36,11 @@ body, html {
 }
 
 .navigation {
-  position: fixed;
-  z-index:  1;
-  top:      20px;
+  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
+  position:    fixed;
+  z-index:     1;
+  top:         20px;
+  font-size:   25px;
 }
 
 .navigation li {
@@ -47,7 +49,6 @@ body, html {
   padding:            0 10px;
   line-height:        30px;
   margin-bottom:      2px;
-  font-weight:        bold;
   -webkit-transition: all .2s ease-in-out;
   border-bottom:      1px solid black;
   text-align:         left;
@@ -55,9 +56,10 @@ body, html {
 }
 
 .navigation li:hover, .active {
-  font-size: 25px;
-  cursor:    pointer;
-  width:     100px!important;
+  font-size:   38px;
+  font-weight: bold;
+  cursor:      pointer;
+  width:       100px!important;
 }
 
 .button {
@@ -308,8 +310,35 @@ body, html {
   min-width: 1035px;
 }
 
+#introduction_container {
+  background:    url("wash-white.png") repeat scroll 0% 0% transparent;
+  font-family:   Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
+  position:      absolute;
+  border-radius: 16px 16px 16px 16px;
+  z-index:       10;
+  top:           1000px;
+  left:          310px;
+  width:         450px;
+  height:        200px;
+  text-align:    left;
+}
+
+#introduction_container h1 a {
+  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
+  font-size:   60px;
+  color:       rgb(33, 169, 126);
+  margin:      0px 10px 30px;
+}
+
+#introduction_container p {
+  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
+  font-size:   20px;
+  margin:      0px 10px 0px;
+}
+
 #vk_container {
   background:    url("wash-white.png") repeat scroll 0% 0% transparent;
+  font-family:   Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
   position:      absolute;
   border-radius: 16px 16px 16px 16px;
   z-index:       10;
@@ -321,17 +350,20 @@ body, html {
 }
 
 #vk_container h1 a {
-  font-size: 60px;
-  color:     rgb(33, 169, 126);
-  margin:    0px 10px 30px;
+  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
+  font-size:   60px;
+  color:       rgb(33, 169, 126);
+  margin:      0px 10px 30px;
 }
 
 #vk_container p {
-  font-size: 20px;
-  margin:    0px 10px 0px;
+  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
+  font-size:   20px;
+  margin:      0px 10px 0px;
 }
 
 #google_container {
+  font-family:   Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
   background:    url("wash-white.png") repeat scroll 0% 0% transparent;
   position:      absolute;
   border-radius: 16px 16px 16px 16px;
@@ -344,30 +376,34 @@ body, html {
 }
 
 #google_container h1 a {
-  font-size: 60px;
-  color:     rgb(33, 169, 126);
-  margin:    0px 10px 30px;
+  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
+  font-size:   60px;
+  color:       rgb(33, 169, 126);
+  margin:      0px 10px 30px;
 }
 
 #google_container p {
-  font-size: 20px;
-  margin:    0px 10px 0px;
+  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
+  font-size:   20px;
+  margin:      0px 10px 0px;
 }
 
 #google_container_calendar {
+  font-family:   Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
   background:    url("wash-white.png") repeat scroll 0% 0% transparent;
   position:      absolute;
   border-radius: 16px 16px 16px 16px;
   z-index:       10;
   top:           2100px;
-  right:          310px;
+  right:         310px;
   width:         435px;
   height:        55px;
   text-align:    left;
 }
 
 #google_container_calendar .btn-group {
-  margin: 10px 10px 10px;
+  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
+  margin:      10px 10px 10px;
 }
 
 #hidden_content{
@@ -375,6 +411,7 @@ body, html {
 }
 
 #events_list {
+  font-family:   Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
   background:    url("wash-white.png") repeat scroll 0% 0% transparent;
   position:      absolute;
   border-radius: 16px 16px 16px 16px;
@@ -387,14 +424,16 @@ body, html {
 }
 
 #events_list h3 {
-  font-size: 30px;
-  color:     rgb(33, 169, 126);
-  margin:    0px 10px 30px;
+  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
+  font-size:   30px;
+  color:       rgb(33, 169, 126);
+  margin:      0px 10px 30px;
 }
 
 #events_list p {
-  font-size: 15px;
-  margin:    0px 10px 0px;
+  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
+  font-size:   15px;
+  margin:      0px 10px 0px;
 }
 /* ### CSS Label styling ###*/
 .ribbon {

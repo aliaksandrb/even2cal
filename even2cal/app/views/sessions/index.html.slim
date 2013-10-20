@@ -1,6 +1,11 @@
 /div class="container"
   div class="content_block"
 /= link_to "Logout", "sessions/logout" 
+
+div id="introduction_container"
+  | Hello world!
+
+
 = render "vk" unless @vkontakte
 = render "google" if @google
 = render "groups_listing" if @event_pairs
