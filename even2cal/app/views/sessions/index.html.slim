@@ -38,8 +38,14 @@ div class="intro"
 = render "google" if @google
 = render "groups_listing" if @event_pairs
 
+div id="vk_like"
+= link_to "Твитнуть", "https://twitter.com/share", :class => "twitter-share-button"
+
 javascript:
+  VK.init({apiId: 3903923, onlyWidgets: true});
+
   $(document).ready(function ($) {
+    VK.Widgets.Like("vk_like", {type: "mini", width: 250});
     var slide = #{@activePage};
     if (slide) {
       htmlbody.animate({
