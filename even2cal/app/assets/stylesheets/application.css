@@ -21,14 +21,18 @@ body {
 }
 */
 
-.ololo {
-  display: none;
-}
-
 /* ### PARALLAX MAGIC ### */
 body, html {
   height: 100%;
   width:  100%;
+}
+
+@font-face {
+  font-family: 'Fairview_Regular';    
+  src:         url('/assets/Fairview_Regular.otf'),
+               url('/assets/Fairview_Regular.otf') format('otf');
+  font-style:  normal;
+  font-style:  normal;
 }
 
 .navigation {
@@ -65,7 +69,7 @@ body, html {
   bottom:           0px;
   left:             50%;
   background-color: #333333;
-  background-image: url(arrow.png);
+  background-image: url(arrow2.png);
   background-repeat: no-repeat;
 }
 
@@ -222,6 +226,17 @@ body, html {
   z-index:  10;
 }
 
+.logo_title{
+  display:     block;
+  position:    absolute;
+  top:         2%;
+  left:        45%;
+  color:       rgb(33, 169, 126);
+	text-shadow: 0 2px 0 black, 0 0 10px black;
+  font-size:   110px;
+  z-index:     4;
+  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
+}
 
 /*
 .slide span{

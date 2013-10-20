@@ -7,11 +7,6 @@ html
     = csrf_meta_tags
 
 body
-  div class="flash_messages"
-    = render partial: "layouts/flash_messages", flash: flash 
-
-  /div class="all_content"
-     div class="centered_container"
   /div class="logo"
     div class="ribbon"
       div class="ribbon-stitches-top"
@@ -30,7 +25,12 @@ body
     li class="" data-slide="4"
       | IMPORT
 
+  div class="logo_title"
+    | EVENT TO CALENDAR
+
   div class="content"
+    div class="flash_messages"
+      = render partial: "layouts/flash_messages", flash: flash 
     = yield
 
   div id="slide1" class="slide" data-slide="1" data-stellar-background-ratio="0.5"

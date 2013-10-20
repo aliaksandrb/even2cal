@@ -4,27 +4,32 @@ class SessionsController < ApplicationController
   require 'date'
 
   def index
-			@vkontakte = false
-      @google = true
-      @calendars = get_calendar_list(session[:google][:token]) if google_authorized
+		@vkontakte = false
+    @google = true
+    @calendars = get_calendar_list(session[:google][:token]) if google_authorized
+    @activePage = flash[:page] if flash[:page]
   end
 
   def vk_auth
     session[:vkontakte] = {
       token: auth_hash['credentials']['token'],
-      events: get_vk_user_events(auth_hash['credentials']['token'])}
+      events: get_vk_user_events(auth_hash['credentials']['token'])
+    }
+    flash[:page] = 2
     flash[:success] = "You have successfully logged in to VK" 
     redirect_to root_path
   end
 
   def google_auth
     session[:google] = {token: auth_hash['credentials']['token']}
+    flash[:page] = 3
     flash[:success] = "You have successfully logged in to Google" 
     redirect_to root_path 
   end
 
 	def groups_listing
 		@event_pairs = JSON.parse(session[:vkontakte][:events]).reverse.to_a
+    @activePage = 4
 		render :index 
 	end
 

@@ -1,7 +1,15 @@
 /div class="container"
   div class="content_block"
 /= link_to "Logout", "sessions/logout" 
-
 = render "vk" unless @vkontakte
 = render "google" if @google
 = render "groups_listing" if @event_pairs
+
+javascript:
+  $(document).ready(function ($) {
+    var slide = #{@activePage};
+    htmlbody.animate({
+      scrollTop: $('.slide[data-slide="' + slide + '"]').offset().top
+    }, 2000, 'easeInOutQuint');
+  });
+
