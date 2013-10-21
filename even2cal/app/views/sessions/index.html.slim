@@ -34,11 +34,10 @@ div class="intro"
           p
             | Не забывайте об интересном!
 
-= render "vk" unless @vkontakte
-= render "google" if @google
+= render "vk"
+= render "google"
 = render "groups_listing" if @event_pairs
 
-div id="vk_like"
 = link_to "Твитнуть", "https://twitter.com/share", :class => "twitter-share-button"
 
 javascript:

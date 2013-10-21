@@ -1,7 +1,10 @@
 div id="vk_container"
   header
     h1
-      = link_to "Авторизация в Вконтакте", 'auth/vkontakte'
+      - unless @vk_authorized
+        = link_to "Авторизация в Вконтакте", 'auth/vkontakte'
+      - else
+        = "Вы уже авторизованы"
   p
     | Ваша авторизация необходима для получения списка ваших событий.
     br /

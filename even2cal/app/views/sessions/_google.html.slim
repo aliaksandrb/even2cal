@@ -6,7 +6,10 @@ javascript:
 div id="google_container"
   header
     h1
-      = link_to "Авторизация в Google", 'auth/google'
+      - unless @google_authorized
+        = link_to "Авторизация в Google", 'auth/google'
+      - else
+        = "Вы уже авторизованы"
   p
     | Для работы нам нужен доступ к вашим календарям.
     br /

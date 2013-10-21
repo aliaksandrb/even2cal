@@ -4,9 +4,10 @@ class SessionsController < ApplicationController
   require 'date'
 
   def index
-		@vkontakte = false
-    @google = true
-    @calendars = get_calendar_list(session[:google][:token]) if google_authorized
+    @vk_authorized = vk_authorized
+    @google_authorized = google_authorized
+    @calendars = get_calendar_list(session[:google][:token]) if @google_authorized
+		@event_pairs = JSON.parse(session[:vkontakte][:events]).reverse.to_a if @google_authorized && @vk_authorized
     @activePage = flash[:page] ? flash[:page] : 0
   end
 
@@ -27,15 +28,10 @@ class SessionsController < ApplicationController
     redirect_to root_path 
   end
 
-	def groups_listing
-		@event_pairs = JSON.parse(session[:vkontakte][:events]).reverse.to_a
-    @activePage = 4
-		render :index 
-	end
-
 	def select_calendar
     session[:google][:calendar_id] = params[:calendar_id]	
-		groups_listing
+    flash[:page] = 4
+		redirect_to root_path
 	end
 
   def import_events
