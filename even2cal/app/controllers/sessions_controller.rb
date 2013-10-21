@@ -16,14 +16,14 @@ class SessionsController < ApplicationController
       events: get_vk_user_events(auth_hash['credentials']['token'])
     }
     flash[:page] = 2
-    flash[:success] = "You have successfully logged in to VK" 
+    flash[:success] = "Вы успешно авторизовались в Вконтакте" 
     redirect_to root_path
   end
 
   def google_auth
     session[:google] = {token: auth_hash['credentials']['token']}
     flash[:page] = 3
-    flash[:success] = "You have successfully logged in to Google" 
+    flash[:success] = "Вы успешно авторизовались в Google" 
     redirect_to root_path 
   end
 
@@ -41,22 +41,22 @@ class SessionsController < ApplicationController
   def import_events
     if vk_authorized
 			import_events_to_calendar(session[:google][:calendar_id], params[:selected_events])
-	    flash[:success] = "Events was imported! Check out your calendar now." 
+	    flash[:success] = "Выбранные события были импортированы! А теперь проверьте свой календарь." 
 			redirect_to root_path		
 		else
-	    flash[:danger] = "Please authorize VK first!" 
+	    flash[:danger] = "Пожалуйста, сперва авторизуйтесь в Вконтакте." 
       redirect_to root_path		
 		end
   end
  
   def failure
-    flash[:danger] = "Authorization failed."
+    flash[:danger] = "Проблемы с авторизацией!"
     redirect_to root_path
   end
 
   def logout
     reset_session
-	  flash[:success] = "Logged out!" 
+	  flash[:success] = "Сессия была удалена!"
     redirect_to root_path
   end
 

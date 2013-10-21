@@ -295,7 +295,7 @@ body, html {
   width:        570px;
   display:      table;
   left:         500px;
-  position:     absolute;
+  position:     fixed;
   z-index:      10;
 }
 
@@ -408,20 +408,20 @@ body, html {
   border-radius: 16px 16px 16px 16px;
   z-index:       10;
   top:           1000px;
-  left:          310px;
-  width:         450px;
-  height:        200px;
+  left:          250px;
+  width:         515px;
+  height:        160px;
   text-align:    left;
 }
 
 #vk_container h1 a {
-  font-size:   60px;
+  font-size:   40px;
   color:       rgb(33, 169, 126);
   margin:      0px 10px 30px;
 }
 
 #vk_container p {
-  font-size:   20px;
+  font-size:   15px;
   margin:      0px 10px 0px;
 }
 
@@ -430,21 +430,21 @@ body, html {
   position:      absolute;
   border-radius: 16px 16px 16px 16px;
   z-index:       10;
-  top:           1900px;
-  right:          310px;
-  width:         495px;
-  height:        175px;
+  top:           2000px;
+  right:         310px;
+  width:         440px;
+  height:        140px;
   text-align:    left;
 }
 
 #google_container h1 a {
-  font-size:   60px;
+  font-size:   40px;
   color:       rgb(33, 169, 126);
   margin:      0px 10px 30px;
 }
 
 #google_container p {
-  font-size:   20px;
+  font-size:   15px;
   margin:      0px 10px 0px;
 }
 
@@ -453,9 +453,9 @@ body, html {
   position:      absolute;
   border-radius: 16px 16px 16px 16px;
   z-index:       10;
-  top:           2100px;
+  top:           2150px;
   right:         310px;
-  width:         435px;
+  width:         510px;
   height:        55px;
   text-align:    left;
 }
@@ -473,7 +473,7 @@ body, html {
   position:      absolute;
   border-radius: 16px 16px 16px 16px;
   z-index:       10;
-  top:           2400px;
+  top:           2500px;
   left:          210px;
   width:         550px;
   height:        550px;

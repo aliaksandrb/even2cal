@@ -6,16 +6,16 @@ javascript:
 div id="google_container"
   header
     h1
-      = link_to "Sign in gCalendar", 'auth/google'
+      = link_to "Авторизация в Google", 'auth/google'
   p
-    | We need your authentication to get calendars list.
+    | Для работы нам нужен доступ к вашим календарям.
     br /
-    | You can choose one that used for import after.
+    | Далее вы сможете выбрать любой из них.
 
 - if !@calendars.blank?
   div id="google_container_calendar"
     = form_tag sessions_select_calendar_path do
   	  = select_tag "calendar_id", options_for_select(@calendars, {:class => "selectpicker"}), {"data-style" => "btn-success"} 
-      = submit_tag "Select calendar to import", {class: "btn btn-success"}
+      = submit_tag "Выберете календарь для импорта", {class: "btn btn-success"}
     
 
