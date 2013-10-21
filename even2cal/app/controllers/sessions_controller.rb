@@ -7,7 +7,9 @@ class SessionsController < ApplicationController
     @vk_authorized = vk_authorized
     @google_authorized = google_authorized
     @calendars = get_calendar_list(session[:google][:token]) if @google_authorized
-		@event_pairs = JSON.parse(session[:vkontakte][:events]).reverse.to_a if @google_authorized && @vk_authorized
+		@event_pairs = JSON.parse(session[:vkontakte][:events]).reverse.to_a if @google_authorized &&
+                                                                            @vk_authorized &&
+                                                                            session[:google][:calendar_id]
     @activePage = flash[:page] ? flash[:page] : 0
   end
 

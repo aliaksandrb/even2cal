@@ -438,7 +438,7 @@ body, html {
   z-index:       10;
   top:           2000px;
   right:         310px;
-  width:         440px;
+  width:         450px;
   height:        140px;
   text-align:    left;
 }
@@ -474,6 +474,23 @@ body, html {
 
 #google_container_calendar .btn-group {
   margin:      10px 10px 10px;
+}
+
+#google_container_calendar_error {
+  background:    url("wash-white.png") repeat scroll 0% 0% transparent;
+  position:      absolute;
+  border-radius: 16px 16px 16px 16px;
+  z-index:       10;
+  top:           2150px;
+  right:         310px;
+  width:         410px;
+  height:        55px;
+  text-align:    left;
+}
+
+#google_container_calendar_error p {
+  font-size:   15px;
+  margin:      0px 10px 0px;
 }
 
 #hidden_content{
