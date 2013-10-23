@@ -24,8 +24,7 @@ body {
 /* ### PARALLAX MAGIC ### */
 body, html {
   height: 100%;
-  width: 100%;
-  overflow-x: hidden;
+  width:  100%;
 }
 
 @font-face {
@@ -86,7 +85,7 @@ body, html {
 	background-position:   100% 0;
 	background-repeat:     no-repeat;
   width:                 100%;
-  height:                683px; 
+  height:                100%; 
   position:              relative;
   box-shadow:            inset 0px 10px 10px rgba(0,0,0,0.3);
   display:               block;
@@ -98,6 +97,7 @@ body, html {
   -moz-background-size:    cover;
   -o-background-size:      cover;
   background-size:         cover;
+  padding:                 49% 0px 0px;
 }
 
 #slide2 {
@@ -106,6 +106,7 @@ body, html {
   -moz-background-size:    cover;
   -o-background-size:      cover;
   background-size:         cover;
+  padding:                 50% 0px 0px;
 }
 
 #slide3 {
@@ -114,6 +115,7 @@ body, html {
   -moz-background-size:    cover;
   -o-background-size:      cover;
   background-size:         cover;
+  padding:                 50% 0px 0px;
 }
 
 #slide4 {
@@ -122,6 +124,7 @@ body, html {
   -moz-background-size:    cover;
   -o-background-size:      cover;
   background-size:         cover;
+  padding:                 50% 0px 0px;
 }
 
 #slide1 img:first-child{
@@ -270,20 +273,20 @@ body, html {
 */
 
 .centered_container {
-  display: table;
-  margin-left: auto;
-  height: 100px;
-  width: 300px;
+  display:     table;
+  margin-left:  auto;
+  height:       100px;
+  width:        300px;
   margin-right: auto;
 }
 
 .flash_messages {
-  height:       30px;
-  width:        570px;
-  display:      table;
-  left:         500px;
-  position:     fixed;
-  z-index:      10;
+  height:   30px;
+  width:    570px;
+  display:  table;
+  left:     500px;
+  position: fixed;
+  z-index:  10;
 }
 
 #wrapper {
@@ -298,10 +301,10 @@ body, html {
 }
 
 .intro {
-  padding:       0 10px 10px;
-  top:           290px;
-  left:          220px;
-  position:      absolute;
+  padding:  0 10px 10px;
+  top:      290px;
+  left:     220px;
+  position: absolute;
 }
 
 #intro_block1 {
@@ -332,14 +335,14 @@ body, html {
 }
 
 .intro h1 {
-  font-size:   40px;
-  color:       rgb(33, 169, 126);
-  margin:      0px 10px 15px;
+  font-size: 40px;
+  color:     rgb(33, 169, 126);
+  margin:    0px 10px 15px;
 }
 
 .intro p {
-  font-size:   15px;
-  margin:      0px 10px 0px;
+  font-size: 15px;
+  margin:    0px 10px 0px;
 }
 
 #introduction_container1 {
@@ -519,6 +522,7 @@ body, html {
 #top_bar span a {
   color: rgb(33, 169, 126);
   font-weight: bold;
+  padding-right: 20px;
 }
 
 #footer {
@@ -532,10 +536,10 @@ body, html {
 
 #footer .gradient {
   border-bottom: 2px dotted rgb(33, 169, 126);
-  padding: 0 0 20px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  padding:       0 0 20px;
+  width:         80%;
+  margin-left:   auto;
+  margin-right:  auto;
 }
 
 #footer span a {
