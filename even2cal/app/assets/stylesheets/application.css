@@ -24,7 +24,8 @@ body {
 /* ### PARALLAX MAGIC ### */
 body, html {
   height: 100%;
-  width:  100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 @font-face {
@@ -39,7 +40,7 @@ body, html {
   font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
   position:    fixed;
   z-index:     1;
-  top:         20px;
+  top:         40px;
   font-size:   25px;
 }
 
@@ -82,22 +83,17 @@ body, html {
 
 .slide {
 	background-attachment: fixed;
-	background-position:   50% 0;
+	background-position:   100% 0;
 	background-repeat:     no-repeat;
-  width:                 70%;
-  height:                100%;
+  width:                 100%;
+  height:                683px; 
   position:              relative;
   box-shadow:            inset 0px 10px 10px rgba(0,0,0,0.3);
-  min-width:             1035px;
-  margin:                0 180px 0;
   display:               block;
 }
   
 #slide1 {
   background-image:        url(wall11.png);
-  color:                   white;
-  overflow:                hidden;
-  padding:                 0;
   -webkit-background-size: cover;
   -moz-background-size:    cover;
   -o-background-size:      cover;
@@ -106,9 +102,6 @@ body, html {
 
 #slide2 {
   background-image:        url(wall11.png);
-  color:                   white;
-  overflow:                hidden;
-  padding:                 0;
   -webkit-background-size: cover;
   -moz-background-size:    cover;
   -o-background-size:      cover;
@@ -117,9 +110,6 @@ body, html {
 
 #slide3 {
   background-image:        url(wall11.png);
-  color:                   white;
-  overflow:                hidden;
-  padding:                 0;
   -webkit-background-size: cover;
   -moz-background-size:    cover;
   -o-background-size:      cover;
@@ -128,9 +118,6 @@ body, html {
 
 #slide4 {
   background-image:        url(wall11.png);
-  color:                   white;
-  overflow:                hidden;
-  padding:                 0;
   -webkit-background-size: cover;
   -moz-background-size:    cover;
   -o-background-size:      cover;
@@ -523,7 +510,6 @@ body, html {
 
 #top_bar {
   height:           20px;
-  min-width:        1035px;
   position:         relative;
   background-color: rgb(51, 51, 51);
   color:            rgb(33, 169, 126);
@@ -532,14 +518,12 @@ body, html {
 
 #top_bar span a {
   color: rgb(33, 169, 126);
-  padding: 5px;
   font-weight: bold;
 }
 
 #footer {
   height:           100px;
   width:            500px;
-  top: 645px;
   position:         relative;
   background-color: rgb(51, 51, 51);
   color:            rgb(33, 169, 126);
