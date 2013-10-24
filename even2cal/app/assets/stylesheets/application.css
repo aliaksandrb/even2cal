@@ -85,7 +85,7 @@ body, html {
 	background-position:   100% 0;
 	background-repeat:     no-repeat;
   width:                 100%;
-  height:                100%; 
+  height:                683px; 
   position:              relative;
   box-shadow:            inset 0px 10px 10px rgba(0,0,0,0.3);
   display:               block;
@@ -97,7 +97,6 @@ body, html {
   -moz-background-size:    cover;
   -o-background-size:      cover;
   background-size:         cover;
-  padding:                 49% 0px 0px;
 }
 
 #slide2 {
@@ -106,7 +105,6 @@ body, html {
   -moz-background-size:    cover;
   -o-background-size:      cover;
   background-size:         cover;
-  padding:                 50% 0px 0px;
 }
 
 #slide3 {
@@ -115,7 +113,6 @@ body, html {
   -moz-background-size:    cover;
   -o-background-size:      cover;
   background-size:         cover;
-  padding:                 50% 0px 0px;
 }
 
 #slide4 {
@@ -124,7 +121,6 @@ body, html {
   -moz-background-size:    cover;
   -o-background-size:      cover;
   background-size:         cover;
-  padding:                 50% 0px 0px;
 }
 
 #slide1 img:first-child{
@@ -517,6 +513,7 @@ body, html {
   background-color: rgb(51, 51, 51);
   color:            rgb(33, 169, 126);
   text-align:       right;
+  border: false;
 }
 
 #top_bar span a {
@@ -528,10 +525,11 @@ body, html {
 #footer {
   height:           100px;
   width:            500px;
-  position:         relative;
+  position:         absolute;
   background-color: rgb(51, 51, 51);
   color:            rgb(33, 169, 126);
-  text-align:      center;
+  text-align:       center;
+  bottom: 100px;
 }
 
 #footer .gradient {

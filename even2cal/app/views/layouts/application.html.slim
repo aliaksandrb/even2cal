@@ -16,63 +16,51 @@ body
       div class="ribbon-stitches-bottom"
 
   div class="grid"
-   <div class="row">
-   	<div class="col-xs-12 col-sm-8 col-lg-12">
-     div id="top_bar"
-       = render partial: "layouts/top_bar"
-   	</div>
-   </div>
-   <div class="row">
-   	<div class="col-xs-6 col-sm-4 col-lg-1">
-     ul class="navigation"
-       li class="" data-slide="1"
-         | HOME
-       li class="" data-slide="2"
-         | SIGN VK
-       li class="" data-slide="3"
-         | SIGN gCalendar
-       li class="" data-slide="4"
-         | IMPORT
-   	</div>
-   	<div class="col-xs-12 col-sm-8 col-lg-12">
-     div class="logo_title"
-       | EVENT TO CALENDAR
-   
-     div class="content"
-       div class="flash_messages"
-         = render partial: "layouts/flash_messages", flash: flash 
-       = yield
-
-     div id="slide1" class="slide" data-slide="1" data-stellar-background-ratio="0.0"
-       div id="wrapper"
-         = image_tag 'c1.png', "data-stellar-ratio" => "0.7"
-         = image_tag 'c2.png', "data-stellar-ratio" => "2"
-       a class="button" data-slide="2" title=""
-     div id="slide2" class="slide" data-slide="2" data-stellar-background-ratio="0.0"
-       div id="wrapper"
-         = image_tag 'c3.png', "data-stellar-ratio" => "2.7"
-         = image_tag 'c4.png', "data-stellar-ratio" => "1"
-         = image_tag 'c5.png', "data-stellar-ratio" => "1.5"
-       a class="button" data-slide="3" title=""
-     div id="slide3" class="slide" data-slide="3" data-stellar-background-ratio="0.0"
-       div id="wrapper"
-         = image_tag 'c2.png', "data-stellar-ratio" => "0.8"
-         = image_tag 'c6.png', "data-stellar-ratio" => "1.2"
-         = image_tag 'c1.png', "data-stellar-ratio" => "2"
-       a class="button" data-slide="4" title=""
-     div id="slide4" class="slide" data-slide="4" data-stellar-background-ratio="0.0"
-       div id="wrapper"
-         = image_tag 'c3.png', "data-stellar-ratio" => "1"
-         = image_tag 'c5.png', "data-stellar-ratio" => "0.4"
-         = image_tag 'c4.png', "data-stellar-ratio" => "1.7"
-   	</div>
-   	<div class="col-xs-6 col-sm-4 col-lg-1">
-     div id="vk_like"
-   	</div>
-   </div>
-   <div class="row">
-   	<div class="col-xs-12 col-sm-8 col-lg-12">
-     div id="footer"
-       = render partial: "layouts/footer"
-   	</div>
-   </div>
+    div class="row"
+   	  div class="col-xs-12 col-sm-8 col-lg-12"
+        div id="top_bar"
+          = render partial: "layouts/top_bar"
+    div class="row"
+   	  div class="col-xs-6 col-sm-4 col-lg-1"
+        ul class="navigation"
+          li class="" data-slide="1"
+            | HOME
+          li class="" data-slide="2"
+            | SIGN VK
+          li class="" data-slide="3"
+            | SIGN gCalendar
+          li class="" data-slide="4"
+            | IMPORT
+   	  div class="col-xs-12 col-sm-8 col-lg-12"
+        div class="logo_title"
+          | EVENT TO CALENDAR
+        div class="content"
+          div class="flash_messages"
+            = render partial: "layouts/flash_messages", flash: flash 
+          = yield
+        div id="slide1" class="slide" data-slide="1" data-stellar-background-ratio="0.0"
+          div id="wrapper"
+            = image_tag 'c1.png', "data-stellar-ratio" => "0.7"
+            = image_tag 'c2.png', "data-stellar-ratio" => "2"
+          a class="button" data-slide="2"
+        div id="slide2" class="slide" data-slide="2" data-stellar-background-ratio="0.0"
+          div id="wrapper"
+            = image_tag 'c3.png', "data-stellar-ratio" => "2.7"
+            = image_tag 'c4.png', "data-stellar-ratio" => "1"
+            = image_tag 'c5.png', "data-stellar-ratio" => "1.5"
+          a class="button" data-slide="3"
+        div id="slide3" class="slide" data-slide="3" data-stellar-background-ratio="0.0"
+          div id="wrapper"
+            = image_tag 'c2.png', "data-stellar-ratio" => "0.8"
+            = image_tag 'c6.png', "data-stellar-ratio" => "1.2"
+            = image_tag 'c1.png', "data-stellar-ratio" => "2"
+          a class="button" data-slide="4"
+        div id="slide4" class="slide" data-slide="4" data-stellar-background-ratio="0.0"
+          div id="wrapper"
+            = image_tag 'c3.png', "data-stellar-ratio" => "1"
+            = image_tag 'c5.png', "data-stellar-ratio" => "0.4"
+            = image_tag 'c4.png', "data-stellar-ratio" => "1.7"
+        div id="footer"
+          = render partial: "layouts/footer"
+   	  div class="col-xs-6 col-sm-4 col-lg-1"
+        div id="vk_like"

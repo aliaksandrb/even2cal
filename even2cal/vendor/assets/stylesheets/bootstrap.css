@@ -773,8 +773,6 @@ pre code {
 }
 
 .row {
-  margin-right: -15px;
-  margin-left: -15px;
 }
 
 .row:before,
@@ -846,9 +844,6 @@ pre code {
 .col-lg-11,
 .col-lg-12 {
   position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
 }
 
 .col-xs-1,
