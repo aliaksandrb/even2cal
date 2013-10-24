@@ -17,11 +17,7 @@ body
 
   div class="grid"
     div class="row"
-   	  div class="col-xs-12 col-sm-8 col-lg-12"
-        div id="top_bar"
-          = render partial: "layouts/top_bar"
-    div class="row"
-   	  div class="col-xs-6 col-sm-4 col-lg-1"
+   	  div class="col-sm-4 col-lg-1"
         ul class="navigation"
           li class="" data-slide="1"
             | HOME
@@ -32,6 +28,8 @@ body
           li class="" data-slide="4"
             | IMPORT
    	  div class="col-xs-12 col-sm-8 col-lg-12"
+        div id="top_bar"
+          = render partial: "layouts/top_bar"
         div class="logo_title"
           | EVENT TO CALENDAR
         div class="content"

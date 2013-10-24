@@ -125,68 +125,68 @@ body, html {
 
 #slide1 img:first-child{
   position: absolute;
-  top:      70px;
-  left:     100px;
+  top:      95px;
+  left:     210px;
 }
 
 #slide1 img:nth-child(2){
   position: absolute;
   top:      550px;
-  right:    300px;
+  right:    20px;
 }
 
 #slide2 img:first-child{
   position: absolute;
-  top:      350px;
-  left:     250px;
+  top:      450px;
+  left:     80px;
 }
 
 #slide2 img:nth-child(2){
   position: absolute;
-  top:      250px;
+  top:      450px;
   right:    100px;
 }
 
 #slide2 img:nth-child(3){
   position: absolute;
-  top:      400px;
+  top:      100px;
   right:    350px;
 }
 
 #slide3 img:first-child{
   position: absolute;
-  top:      400px;
-  left:     120px;
+  top:      80px;
+  left:     350px;
 }
 
 #slide3 img:nth-child(2){
   position: absolute;
-  top:      100px;
-  right:    200px;
+  top:      350px;
+  right:    50px;
 }
 
 #slide3 img:nth-child(3){
   position: absolute;
-  top:      580px;
-  left:     10px;
+  top:      480px;
+  left:     40px;
 }
 
 #slide4 img:first-child{
   position: absolute;
-  top:      200px;
-  left:     750px;
+  top:      80px;
+  left:     350px;
 }
 
 #slide4 img:nth-child(2){
   position: absolute;
-  top:      500px;
-  right:    150px;
+  top:      540px;
+  right:    720px;
 }
 
 #slide4 img:nth-child(3){
   position: absolute;
-  top:      180px;
-  left:     5px;
+  top:      250px;
+  left:     10px;
 }
 
 
@@ -218,7 +218,7 @@ body, html {
   display:     block;
   position:    absolute;
   top:         20px;
-  left:        45%;
+  left:        55%;
   color:       rgb(33, 169, 126);
 	text-shadow: 0 2px 0 black, 0 0 10px black;
   font-size:   110px;
@@ -310,6 +310,7 @@ body, html {
   width:         310px;
   height:        190px;
   text-align:    left;
+  margin-left:   80px;
 }
 
 #intro_block2 {
@@ -319,6 +320,7 @@ body, html {
   width:         310px;
   height:        190px;
   text-align:    left;
+  margin-left:   80px;
 }
 
 #intro_block3 {
@@ -328,6 +330,7 @@ body, html {
   width:         310px;
   height:        190px;
   text-align:    left;
+  margin-left:   80px;
 }
 
 .intro h1 {
@@ -341,31 +344,6 @@ body, html {
   margin:    0px 10px 0px;
 }
 
-#introduction_container1 {
-  background:    url("wash-white.png") repeat scroll 0% 0% transparent;
-  font-family:   Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
-  position:      absolute;
-  border-radius: 16px 16px 16px 16px;
-  z-index:       10;
-  top:           420px;
-  left:          310px;
-  width:         450px;
-  height:        200px;
-  text-align:    left;
-}
-
-#introduction_container1 h1 {
-  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
-  font-size:   60px;
-  color:       rgb(33, 169, 126);
-  margin:      0px 10px 30px;
-}
-
-#introduction_container1 p {
-  font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
-  font-size:   20px;
-  margin:      0px 10px 0px;
-}
 
 #introduction_container2 {
   background:    url("wash-white.png") repeat scroll 0% 0% transparent;
@@ -373,9 +351,9 @@ body, html {
   border-radius: 16px 16px 16px 16px;
   z-index:       10;
   top:           150px;
-  left:          625px;
+  left:          50.5%;
   width:         610px;
-  height:        25px;
+  height:        30px;
   text-align:    left;
 }
 
@@ -385,7 +363,7 @@ body, html {
 
 #introduction_container2 h1 {
   font-size:   20px;
-  margin:      0px 10px 30px;
+  margin:      3px 10px 30px;
 }
 
 #vk_container {
@@ -393,7 +371,7 @@ body, html {
   position:      absolute;
   border-radius: 16px 16px 16px 16px;
   z-index:       10;
-  top:           1000px;
+  top:           800px;
   left:          250px;
   width:         515px;
   height:        160px;
@@ -422,7 +400,7 @@ body, html {
   position:      absolute;
   border-radius: 16px 16px 16px 16px;
   z-index:       10;
-  top:           2000px;
+  top:           1550px;
   right:         310px;
   width:         450px;
   height:        140px;
@@ -451,8 +429,8 @@ body, html {
   position:      absolute;
   border-radius: 16px 16px 16px 16px;
   z-index:       10;
-  top:           2150px;
-  right:         310px;
+  top:           2100px;
+  right:         110px;
   width:         510px;
   height:        55px;
   text-align:    left;
@@ -467,8 +445,8 @@ body, html {
   position:      absolute;
   border-radius: 16px 16px 16px 16px;
   z-index:       10;
-  top:           2150px;
-  right:         310px;
+  top:           2100px;
+  right:         110px;
   width:         410px;
   height:        55px;
   text-align:    left;
@@ -488,32 +466,42 @@ body, html {
   position:      absolute;
   border-radius: 16px 16px 16px 16px;
   z-index:       10;
-  top:           2500px;
-  left:          210px;
+  top:           2170px;
+  right:         110px;
   width:         550px;
-  height:        550px;
+  height:        530px;
   text-align:    left;
 }
 
 #events_list h3 {
-  font-size:   30px;
-  color:       rgb(33, 169, 126);
-  margin:      0px 10px 30px;
+  font-size: 30px;
+  color:     rgb(33, 169, 126);
+  margin:    0px 10px 30px;
 }
 
 #events_list p {
-  font-size:   15px;
-  margin:      0px 10px 0px;
+  font-size: 15px;
+  margin:    0px 10px 0px;
 }
 
+.page-selection .pagination {
+  padding-left: 10px;
+}
+
+#import_btn {
+  padding-left: 10px;
+}
 
 #top_bar {
   height:           20px;
-  position:         relative;
+  top:              0px;
+  position:         absolute;
+  z-index:          10;
+  left:             0;
+  width:            100%;
   background-color: rgb(51, 51, 51);
   color:            rgb(33, 169, 126);
   text-align:       right;
-  border: false;
 }
 
 #top_bar span a {
@@ -529,7 +517,7 @@ body, html {
   background-color: rgb(51, 51, 51);
   color:            rgb(33, 169, 126);
   text-align:       center;
-  bottom: 100px;
+  bottom:           50px;
 }
 
 #footer .gradient {
