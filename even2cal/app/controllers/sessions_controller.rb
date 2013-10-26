@@ -36,12 +36,13 @@ class SessionsController < ApplicationController
 	end
 
   def import_events
-    if vk_authorized
+    if vk_authorized && google_authorized && !params[:selected_events].blank?
       do_import
 	    flash[:success] = "Выбранные события были импортированы! А теперь проверьте свой календарь." 
 			redirect_to root_path		
 		else
-	    flash[:danger] = "Пожалуйста, сперва авторизуйтесь в Вконтакте." 
+	    flash[:danger] = "Пожалуйста, выберете события для импорта." 
+      flash[:page] = 4
       redirect_to root_path		
 		end
   end
