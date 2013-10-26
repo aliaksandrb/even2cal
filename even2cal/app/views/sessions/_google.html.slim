@@ -14,6 +14,8 @@ div id="google_container"
     | Для работы нам нужен доступ к вашим календарям.
     br /
     | Далее вы сможете выбрать любой из них.
+    br /
+    | Будут доступны только календари с правом на создание событий. 
 
 - if !@calendars.blank? && @vk_authorized 
   div id="google_container_calendar"

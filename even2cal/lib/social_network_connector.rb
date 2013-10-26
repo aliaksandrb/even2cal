@@ -17,7 +17,9 @@ module SocialNetworkConnector
           :api_method => service.calendar_list.list,
           :parameters => {},
           :headers => {'Content-Type' => 'application/json'})
-        calendar_list.data.items.collect {|cal| [cal.summary, cal.id]}
+        calendar_list.data.items.reject{ |cal|
+          cal.accessRole != "writer" && cal.accessRole != "owner"
+        }.collect{ |cal| [cal.summary, cal.id, cal.timeZone]}
       end
 
       def import_events_to_calendar(calendar_id, selected_events_array, google_token, vk_token, events)
