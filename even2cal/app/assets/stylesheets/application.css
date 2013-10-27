@@ -296,6 +296,20 @@ body, html {
   min-width: 1035px;
 }
 
+.error_content {
+  color:      rgb(33, 169, 126);
+  width:      100%;
+  height:     100%;
+  padding:    60px;
+  background: url(wall11.png);
+}
+
+.error_content .caption a {
+  color:       rgb(33, 169, 126);
+  font-size:   15px;
+  font-weight: bold;
+}
+
 .intro {
   padding:  0 10px 10px;
   top:      290px;

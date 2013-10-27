@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title Even2cal
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = csrf_meta_tags
+
+body
+  div class="error_content"
+    div class="grid"
+      div class="row"
+     	  div class="col-xs-12 col-sm-12 col-lg-12"
+          div id="top_bar"
+            = render partial: "layouts/top_bar"
+      div class="row"
+     	  div class="col-xs-12 col-sm-12 col-lg-12"
+          div class="logo_title"
+            | EVENT TO CALENDAR
+          div class="flash_messages"
+            = render partial: "layouts/flash_messages", flash: flash 
+      div class="row"
+     	  div class="col-xs-12 col-sm-12 col-lg-12"
+          = yield
+      div class="row"
+     	  div class="col-xs-12 col-sm-12 col-lg-12"
+          div id="footer"
+            = render partial: "layouts/footer"

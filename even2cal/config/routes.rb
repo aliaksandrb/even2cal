@@ -66,4 +66,7 @@ Even2cal::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  unless Rails.application.config.consider_all_requests_local
+    match '*not_found', to: 'errors#error_404', via: :all
+  end
 end
