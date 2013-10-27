@@ -17,13 +17,17 @@ div id="google_container"
     br /
     | Будут доступны только календари с правом на создание событий. 
 
-- if !@calendars.blank? && @vk_authorized 
+- if !@calendars.blank? && @vk_authorized && @google_authorized
   div id="google_container_calendar"
     = form_tag sessions_select_calendar_path do
   	  = select_tag "calendar_id", options_for_select(@calendars, {:class => "selectpicker"}), {"data-style" => "btn-success"} 
       = submit_tag "Выберете календарь для импорта", {class: "btn btn-success"}
+- elsif @calendars.blank?  && @vk_authorized && @google_authorized
+  div id="google_container_calendar_error"
+    p
+      | У вас нет созданных календарей Google.
 - else
   div id="google_container_calendar_error"
     p
-      | Для продолжения необходима авторизация Вконтакте.
+      | Для продолжения необходима авторизация #{@vk_authorized ? 'Google' : 'Вконтакте'}.
 
