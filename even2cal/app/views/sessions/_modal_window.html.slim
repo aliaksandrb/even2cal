@@ -1,0 +1,13 @@
+div class="modal fade" id="#{modal_id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+  div class="modal-dialog"
+    div class="modal-content"
+      div class="modal-header"
+        button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+          | &times;
+        h2 class="modal-title"
+          | #{modal_title}
+      div class="modal-body"
+        = render partial: modal_id.chomp("Modal")
+      div class="modal-footer"
+        button type="button" class="btn btn-success" data-dismiss="modal"
+          | Закрыть

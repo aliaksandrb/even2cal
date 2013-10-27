@@ -1,6 +1,11 @@
+= render partial: 'modal_window', locals: {modal_id: "aboutModal", modal_title: "О сервисе"}
+= render partial: 'modal_window', locals: {modal_id: "termsModal", modal_title: "Условия пользования"}
+= render partial: 'modal_window', locals: {modal_id: "faqModal", modal_title: "Частые вопросы"}
+= render partial: 'modal_window', locals: {modal_id: "contactsModal", modal_title: "Контакты"}
+
 div class="gradient"
 span
-  | #{link_to "О сервисе", "#"} | #{link_to "Условия пользования", "#"} | #{link_to "ЧаВо", "#"} | #{link_to "Контакты", "#"}
+  | #{link_to "О сервисе", "#aboutModal", "data-toggle" => "modal"} | #{link_to "Условия пользования", "#termsModal", "data-toggle" => "modal"} | #{link_to "ЧаВо", "#faqModal", "data-toggle" => "modal"} | #{link_to "Контакты", "#contactsModal", "data-toggle" => "modal"}
 br /
 | v.01 @ 10/2013
 
