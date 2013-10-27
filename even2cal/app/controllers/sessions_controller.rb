@@ -61,8 +61,10 @@ class SessionsController < ApplicationController
   protected
 
   def do_import
-    SocialNetworkConnector::Googler.import_events_to_calendar(session[:google][:calendar_id],
+    calendar_id = session[:google][:calendar_id]
+    SocialNetworkConnector::Googler.import_events_to_calendar(calendar_id,
                                                               params[:selected_events],
+                                                              session[:google][:calendars][calendar_id],
                                                               session[:google][:token],
                                                               session[:vkontakte][:token],
                                                               session[:vkontakte][:events])
@@ -73,7 +75,15 @@ class SessionsController < ApplicationController
   end
 
   def set_calendars
-    SocialNetworkConnector::Googler.get_calendar_list(session[:google][:token])
+    session[:google][:calendars] = {}
+    calendars_with_timezones_array = SocialNetworkConnector::Googler.get_calendar_list(session[:google][:token])
+    calendars_with_timezones_array.collect do |cal_array|
+#     cal_array => [summary, id, timeZone]
+#     Google notations for timezones: "Continent/Timezone". Example: "Europe/Minsk"
+#     But Ruby uses only the part after '/'
+      session[:google][:calendars][cal_array[1]] = /\A\w+\/(.*)/.match(cal_array[2])[1]
+      [cal_array[0], cal_array[1]]
+    end
   end
 
   def auth_hash

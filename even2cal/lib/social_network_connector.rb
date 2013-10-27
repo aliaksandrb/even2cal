@@ -22,7 +22,7 @@ module SocialNetworkConnector
         }.collect{ |cal| [cal.summary, cal.id, cal.timeZone]}
       end
 
-      def import_events_to_calendar(calendar_id, selected_events_array, google_token, vk_token, events)
+      def import_events_to_calendar(calendar_id, selected_events_array, calendar_timezone, google_token, vk_token, events)
         client = Google::APIClient.new(
           :application_name => "Even2Cal",
           :application_version => "0.1")
@@ -37,7 +37,7 @@ module SocialNetworkConnector
           client.execute(
             api_method: service.events.insert,
             parameters: {'calendarId' => calendar_id},
-                  body: prepare_params_from_event(event, vk_token), 
+                  body: prepare_params_from_event(event, vk_token, calendar_timezone), 
                headers: {'Content-Type' => 'application/json'}
           )
         end
@@ -45,23 +45,23 @@ module SocialNetworkConnector
 
       protected
 
-      def prepare_params_from_event(event, vk_token)
-       	# TIMEZONE STILL HARDCODED
+      def prepare_params_from_event(event, vk_token, calendar_timezone)
+        current_timezone = Time.zone
+        Time.zone = calendar_timezone
        	# CHECK more easy way of time converting
          result = {
            'summary' => event["name"],
            'description' => ActionView::Base.full_sanitizer.sanitize(event["description"]),
            'start' => {
-             'dateTime' => DateTime.parse(Time.at(event["start_date"].to_i).to_s).rfc3339,
-             'timeZone' => 'Europe/Minsk' 
+             'dateTime' => DateTime.parse(Time.zone.at(event["start_date"].to_i).to_s).rfc3339
            },
            'end' => {
-             'dateTime' => DateTime.parse(Time.at(event["start_date"].to_i + 1800).to_s).rfc3339,
-             'timeZone' => 'Europe/Minsk'
+             'dateTime' => DateTime.parse(Time.zone.at(event["start_date"].to_i + 1800).to_s).rfc3339
            },
            'location' => SocialNetworkConnector::Vkontakte.get_event_location(event, vk_token)
          }
          
+         Time.zone = current_timezone
          JSON.dump(result)
        end
     end
