@@ -22,11 +22,11 @@ div id="google_container"
     = form_tag sessions_select_calendar_path do
   	  = select_tag "calendar_id", options_for_select(@calendars, {:class => "selectpicker"}), {"data-style" => "btn-success"} 
       = submit_tag "Выберете календарь для импорта", {class: "btn btn-success"}
-- elsif @calendars.blank?  && @vk_authorized && @google_authorized
+- elsif @calendars.blank? && @vk_authorized && @google_authorized
   div id="google_container_calendar_error"
     p
       | У вас нет созданных календарей Google.
-- else
+- elsif @vk_authorized || @google_authorized
   div id="google_container_calendar_error"
     p
       | Для продолжения необходима авторизация #{@vk_authorized ? 'Google' : 'Вконтакте'}.

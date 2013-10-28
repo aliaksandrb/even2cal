@@ -11,17 +11,18 @@ div id="hidden_content"
   - @event_pairs.each do |event|
       div class="col-xs-6"
         p
-          = Time.at(event['start_date'].to_i).to_s(:short)
-        div class="thumbnail"
-         = image_tag event["photo_medium"]
+          b
+            = Time.at(event['start_date'].to_i).to_s(:short)
+        div class="img-thumbnail"
+          = link_to image_tag(event["photo_medium"]), "http://vk.com/#{event['screen_name']}"
         div class="caption"
           h3
-    			  = "#{event['name'].first(37)}..."
+    			  = "#{strip_tags(event['name']).first(47)}..."
           p
-            = "#{event['description'].first(97)}..."
+            = "#{strip_tags(event['description']).first(287)}..."
           p
             = check_box_tag "selected_events[]", event["gid"], class: "checkbox"
-            = label_tag "checkbox", "select for import", class: "label"
+            = label_tag "checkbox", "импортировать", class: "label"
 
 
 javascript:

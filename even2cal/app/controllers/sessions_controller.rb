@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
     if @google_authorized && @vk_authorized && session[:google][:calendar_id]
 		  @event_pairs = JSON.parse(session[:vkontakte][:events]).reverse.to_a 
     end
+    Rails.logger.debug(@event_pairs)
     @activePage = flash[:page] ? flash[:page] : 0
   end
 
