@@ -555,3 +555,8 @@ body, html {
   color: rgb(33, 169, 126);
 }
 
+#social {
+  position: fixed;
+	bottom:   5px;
+	left:     5px;
+}
