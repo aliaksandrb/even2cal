@@ -560,3 +560,9 @@ body, html {
 	bottom:   5px;
 	left:     5px;
 }
+
+.modal-text {
+  text-align: left;
+  border:     false;
+  color:      black;
+}
