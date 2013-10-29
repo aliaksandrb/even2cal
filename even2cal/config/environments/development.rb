@@ -26,4 +26,8 @@ Even2cal::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  # rails logs stdout
+  config.logger = Logger.new(STDOUT)
+  config.logger.level = Logger.const_get('DEBUG')
 end
