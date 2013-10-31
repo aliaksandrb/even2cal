@@ -17,28 +17,30 @@ html
     <![endif]-->
 body
   div class="container"
-    div class="row top"
-      div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
-        div id="top_bar"
-          = render partial: "layouts/top_bar"
+    div id="top_bar"
+       = render partial: "layouts/top_bar"
 
+    div class="logo_title"
+		  | EVENT TO CALENDAR
+
+    div id="introduction_container2"
+      header
+        h1
+          | Легкий импорт ваших событий #{link_to "Вконтакте", "https://vk.com/"} в #{link_to "Google календарь", "https://www.google.com/calendar/"}! 
+			
     div class="row introduction"
-      div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"
-        | LEFT
-      div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"
-        div class="logo_title"
-          | EVENT TO CALENDAR
-					
-        div id="introduction_container2"
-          header
-            h1
-              | Легкий импорт ваших событий #{link_to "Вконтакте", "https://vk.com/"} в #{link_to "Google календарь", "https://www.google.com/calendar/"}! 
+      = yield(:index)
 
-      div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"
-        | RIGHT
-    div class="row content"
-      = yield
+    div class="row vkontakte"
+      = yield(:vkontakte)
 
+	  div class="row google"
+      = yield(:google)
+
+    = yield(:events_list)
+
+    div id="footer"
+      = render partial: "layouts/footer"
 <!--     	  div class="col-sm-4 col-lg-1"
           ul class="navigation"
             li class="" data-slide="1"
