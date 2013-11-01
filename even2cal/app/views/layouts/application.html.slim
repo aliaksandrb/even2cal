@@ -20,13 +20,16 @@ body
     div id="top_bar"
        = render partial: "layouts/top_bar"
 
-    div class="logo_title"
-		  | EVENT TO CALENDAR
+    div class="home_screen"
+      div id="logo_title"
+		    header
+			    h1
+		        | EVENT TO CALENDAR
 
-    div id="introduction_container2"
-      header
-        h1
-          | Легкий импорт ваших событий #{link_to "Вконтакте", "https://vk.com/"} в #{link_to "Google календарь", "https://www.google.com/calendar/"}! 
+      div id="introduction_container2"
+        header
+          h1
+            | Легкий импорт ваших событий #{link_to "Вконтакте", "https://vk.com/"} в #{link_to "Google календарь", "https://www.google.com/calendar/"}! 
 			
     div class="row introduction"
       = yield(:index)

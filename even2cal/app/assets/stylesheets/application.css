@@ -21,26 +21,194 @@ body {
 }
 */
 
+body, html {
+	background: url('wall11.png');
+  height: 100%;
+  width:  100%;
+}
+
 @media (min-width: 768px){
   .container {
     max-width: 730px;
   }
 }
 
+@font-face {
+  font-family: 'Fairview_Regular';    
+  src:         url('/assets/Fairview_Regular.otf'),
+               url('/assets/Fairview_Regular.otf') format('otf');
+  font-style:  normal;
+  font-style:  normal;
+}
+
 #top_bar {
   height:           20px;
-  top:              0px;
+	width:            100%;
   position:         absolute;
   z-index:          10;
-  left:             0;
-  width:            100%;
+	left:             0;
   background-color: rgb(51, 51, 51);
   color:            rgb(71, 164, 71);
   text-align:       right;
 }
-.logo_title {
-  padding-top: 30px;
+
+.home_screen {
+  min-height: 300px;
 }
+
+.home_screen #logo_title{
+	text-align:  center;
+	clear:       both;
+	width:       auto;
+  padding-top: 30px;
+  color:       rgb(71, 164, 71);
+  text-shadow: 0 2px 0 black, 0 0 10px black;
+  font-size:   140px;
+  z-index:     4;
+  font-family: 'Fairview_Regular','Helvetica Neue',Helvetica, sans-serif;
+}
+
+.home_screen #introduction_container2 {
+  background:    url("wash-white.png") repeat scroll 0% 0% transparent;
+	clear:         both;
+  border-radius: 16px 16px 16px 16px;
+  z-index:       4;
+  width:         auto;
+  text-align:    center;
+}
+
+.home_screen #introduction_container2 h1 a{
+  color:       rgb(71, 164, 71);
+}
+
+.home_screen #introduction_container2 h1 {
+  color:     black;
+  font-size: 30px;
+/*  margin:    3px 10px 30px;
+*/
+}
+
+.intro {
+	width: auto;
+	text-align: center;
+}
+
+.intro h1 {
+  font-size: 40px;
+	font-weight: bold;
+  color:     rgb(71, 164, 71);
+  margin:    0px 10px 15px;
+}
+
+.intro p {
+	color:     black;
+  font-size: 15px;
+  margin:    0px 10px 0px;
+}
+
+#intro_block {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  background:    url("wash-white.png") repeat scroll 0% 0% transparent;
+  border-radius: 16px 16px 16px 16px;
+  z-index:       10;
+  height:        210px;
+}
+
+#vk_container {
+  background:    url("wash-white.png") repeat scroll 0% 0% transparent;
+  border-radius: 16px 16px 16px 16px;
+  z-index:       10;
+  width:         auto;
+  height:        auto:
+}
+ 
+#vk_container h1 a {
+  font-size:   40px;
+  color:       rgb(71, 164, 71);
+  margin:      0px 10px 30px;
+}
+ 
+#vk_container h1 {
+  font-size:   40px;
+  color:       rgb(71, 164, 71);
+  margin:      0px 10px 30px;
+  text-align:    center;
+}
+ 
+#vk_container p {
+ 	color:     black;
+  font-size: 15px;
+  margin:    0px 10px 0px;
+  text-align:    center;
+}
+
+#google_container {
+	margin-top:   20px;
+  background:    url("wash-white.png") repeat scroll 0% 0% transparent;
+  border-radius: 16px 16px 16px 16px;
+  z-index:       10;
+  width:         auto;
+  height:        auto;
+  text-align:    center;
+}
+ 
+ #google_container h1 a {
+  font-size:   40px;
+  color:       rgb(71, 164, 71);
+  margin:      0px 10px 30px;
+}
+ 
+ #google_container h1 {
+  font-size:   40px;
+  color:       rgb(71, 164, 71);
+  margin:      0px 10px 30px;
+}
+ 
+ #google_container p {
+	color:     black;
+  font-size: 15px;
+  margin:    0px 10px 0px;
+}
+
+#google_container_calendar_error {
+  background:    url("wash-white.png") repeat scroll 0% 0% transparent;
+  border-radius: 16px 16px 16px 16px;
+  z-index:       10;
+  width:         auto;
+  height:        auto;
+  text-align:    center;
+}
+ 
+#google_container_calendar_error p {
+  color:     black;
+  font-size: 15px;
+  margin:    0px 10px 0px;
+}
+
+
+#footer {
+	margin-top:       20px;
+  height:           100px;
+  width:            100%;
+  background-color: rgb(51, 51, 51);
+  color:            rgb(71, 164, 71);
+  text-align:       center;
+  margin-bottom:    30px;
+}
+
+#footer .gradient {
+  border-bottom: 2px dotted rgb(71, 164, 71);
+  padding:       0 0 20px;
+  width:         80%;
+  margin-left:   auto;
+  margin-right:  auto;
+}
+
+#footer span a {
+  color: rgb(71, 164, 71);
+}
+
 #hidden_content{
   display: none;
 }
@@ -51,19 +219,12 @@ body {
 
 /*
  * 
- * /* ### PARALLAX MAGIC ### */
  * body, html {
  *   height: 100%;
  *   width:  100%;
  * }
  * 
- * @font-face {
- *   font-family: 'Fairview_Regular';    
- *   src:         url('/assets/Fairview_Regular.otf'),
- *                url('/assets/Fairview_Regular.otf') format('otf');
- *   font-style:  normal;
- *   font-style:  normal;
- * }
+
  * 
  * .navigation {
  *   font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
@@ -219,7 +380,6 @@ body {
  * }
  * 
  * 
- * /* ### CONTENT RELATED ### */
  * #login_link_vk {
  *   position:    absolute;
  *   padding-top: 750px;
@@ -239,21 +399,9 @@ body {
  *   position: fixed;
  *   top:      5%;
  *   left:     50%;
- *   /*width:  446px;*/
  *   z-index:  10;
  * }
- * 
- * .logo_title{
- *   display:     block;
- *   position:    absolute;
- *   top:         20px;
- *   left:        55%;
- *   color:       rgb(71, 164, 71);
- * 	text-shadow: 0 2px 0 black, 0 0 10px black;
- *   font-size:   110px;
- *   z-index:     4;
- *   font-family: Fairview_Regular,'Helvetica Neue',Helvetica, sans-serif;
- * }
+
  * 
  * /*
  * .slide span{
@@ -339,137 +487,14 @@ body {
  *   font-weight: bold;
  * }
  * 
- * .intro {
- *   padding:  0 10px 10px;
- *   top:      290px;
- *   left:     220px;
- *   position: absolute;
- * }
- * 
- * #intro_block1 {
- *   background:    url("wash-white.png") repeat scroll 0% 0% transparent;
- *   border-radius: 16px 16px 16px 16px;
- *   z-index:       10;
- *   width:         310px;
- *   height:        190px;
- *   text-align:    left;
- *   margin-left:   80px;
- * }
- * 
- * #intro_block2 {
- *   background:    url("wash-white.png") repeat scroll 0% 0% transparent;
- *   border-radius: 16px 16px 16px 16px;
- *   z-index:       10;
- *   width:         310px;
- *   height:        190px;
- *   text-align:    left;
- *   margin-left:   80px;
- * }
- * 
- * #intro_block3 {
- *   background:    url("wash-white.png") repeat scroll 0% 0% transparent;
- *   border-radius: 16px 16px 16px 16px;
- *   z-index:       10;
- *   width:         310px;
- *   height:        190px;
- *   text-align:    left;
- *   margin-left:   80px;
- * }
- * 
- * .intro h1 {
- *   font-size: 40px;
- *   color:     rgb(71, 164, 71);
- *   margin:    0px 10px 15px;
- * }
- * 
- * .intro p {
- * 	color:     black;
- *   font-size: 15px;
- *   margin:    0px 10px 0px;
- * }
+
  * 
  * 
- * #introduction_container2 {
- *   background:    url("wash-white.png") repeat scroll 0% 0% transparent;
- *   position:      absolute;
- *   border-radius: 16px 16px 16px 16px;
- *   z-index:       10;
- *   top:           150px;
- *   left:          50.5%;
- *   width:         610px;
- *   height:        30px;
- *   text-align:    left;
- * }
+ 
  * 
- * #introduction_container2 h1 a{
- *   color:       rgb(71, 164, 71);
- * }
+ 
  * 
- * #introduction_container2 h1 {
- * 	color:     black;
- *   font-size: 20px;
- *   margin:    3px 10px 30px;
- * }
- * 
- * #vk_container {
- *   background:    url("wash-white.png") repeat scroll 0% 0% transparent;
- *   position:      absolute;
- *   border-radius: 16px 16px 16px 16px;
- *   z-index:       10;
- *   top:           800px;
- *   left:          250px;
- *   width:         515px;
- *   height:        160px;
- *   text-align:    left;
- * }
- * 
- * #vk_container h1 a {
- *   font-size:   40px;
- *   color:       rgb(71, 164, 71);
- *   margin:      0px 10px 30px;
- * }
- * 
- * #vk_container h1 {
- *   font-size:   40px;
- *   color:       rgb(71, 164, 71);
- *   margin:      0px 10px 30px;
- * }
- * 
- * #vk_container p {
- * 	color:     black;
- *   font-size: 15px;
- *   margin:    0px 10px 0px;
- * }
- * 
- * #google_container {
- *   background:    url("wash-white.png") repeat scroll 0% 0% transparent;
- *   position:      absolute;
- *   border-radius: 16px 16px 16px 16px;
- *   z-index:       10;
- *   top:           1550px;
- *   right:         360px;
- *   width:         500px;
- *   height:        150px;
- *   text-align:    left;
- * }
- * 
- * #google_container h1 a {
- *   font-size:   40px;
- *   color:       rgb(71, 164, 71);
- *   margin:      0px 10px 30px;
- * }
- * 
- * #google_container h1 {
- *   font-size:   40px;
- *   color:       rgb(71, 164, 71);
- *   margin:      0px 10px 30px;
- * }
- * 
- * #google_container p {
- * 	color:     black;
- *   font-size: 15px;
- *   margin:    0px 10px 0px;
- * }
+ 
  * 
  * #google_container_calendar {
  *   background:    url("wash-white.png") repeat scroll 0% 0% transparent;
@@ -487,23 +512,7 @@ body {
  *   margin:      10px 10px 10px;
  * }
  * 
- * #google_container_calendar_error {
- *   background:    url("wash-white.png") repeat scroll 0% 0% transparent;
- *   position:      absolute;
- *   border-radius: 16px 16px 16px 16px;
- *   z-index:       10;
- *   top:           2100px;
- *   right:         110px;
- *   width:         410px;
- *   height:        55px;
- *   text-align:    left;
- * }
- * 
- * #google_container_calendar_error p {
- * 	color:     black;
- *   font-size: 15px;
- *   margin:    0px 10px 0px;
- * }
+ 
  * 
  * #hidden_content{
  *   display: none;
@@ -563,27 +572,7 @@ body {
  *   padding-right: 20px;
  * }
  * 
- * #footer {
- *   height:           100px;
- *   width:            500px;
- *   position:         absolute;
- *   background-color: rgb(51, 51, 51);
- *   color:            rgb(71, 164, 71);
- *   text-align:       center;
- *   bottom:           50px;
- * }
- * 
- * #footer .gradient {
- *   border-bottom: 2px dotted rgb(71, 164, 71);
- *   padding:       0 0 20px;
- *   width:         80%;
- *   margin-left:   auto;
- *   margin-right:  auto;
- * }
- * 
- * #footer span a {
- *   color: rgb(71, 164, 71);
- * }
+
  * 
  * #social {
  *   position: fixed;
