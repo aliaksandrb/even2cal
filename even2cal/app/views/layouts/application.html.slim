@@ -20,27 +20,31 @@ body
     div id="top_bar"
        = render partial: "layouts/top_bar"
 
-    div class="home_screen"
-      div id="logo_title"
-		    header
-			    h1
-		        | EVENT TO CALENDAR
+    div class="section"
+      div class="home_screen"
+        div id="logo_title"
+    	    header
+    		    h1
+    	        | EVENT TO CALENDAR
+    
+        div id="introduction_container2"
+          header
+            h1
+              | Легкий импорт ваших событий #{link_to "Вконтакте", "https://vk.com/"} в #{link_to "Google календарь", "https://www.google.com/calendar/"}! 
+    		
+      div class="row introduction"
+        = yield(:index)
+	
+    div class="section"
+      div class="row vkontakte"
+        = yield(:vkontakte)
 
-      div id="introduction_container2"
-        header
-          h1
-            | Легкий импорт ваших событий #{link_to "Вконтакте", "https://vk.com/"} в #{link_to "Google календарь", "https://www.google.com/calendar/"}! 
-			
-    div class="row introduction"
-      = yield(:index)
+    div class="section"
+      div class="row google"
+        = yield(:google)
 
-    div class="row vkontakte"
-      = yield(:vkontakte)
-
-	  div class="row google"
-      = yield(:google)
-
-    = yield(:events_list)
+    div class="section"
+      = yield(:events_list)
 
     div id="footer"
       = render partial: "layouts/footer"

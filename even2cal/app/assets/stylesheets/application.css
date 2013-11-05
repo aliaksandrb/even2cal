@@ -41,6 +41,27 @@ body, html {
   font-style:  normal;
 }
 
+.section {
+  min-height: 700px;
+	display: block;
+}
+
+.section .inside{
+	max-width: 90%;
+	position: relative;
+  margin: 0px auto;
+  padding: 5% 20px;
+}
+
+.section_text{
+  float: left;
+  width: 40%;
+}
+
+.section_image img{
+  max-width: 100%;
+}
+
 #top_bar {
   height:           20px;
 	width:            100%;
@@ -59,11 +80,10 @@ body, html {
 .home_screen #logo_title{
 	text-align:  center;
 	clear:       both;
-	width:       auto;
   padding-top: 30px;
   color:       rgb(71, 164, 71);
   text-shadow: 0 2px 0 black, 0 0 10px black;
-  font-size:   140px;
+  font-size:   120px;
   z-index:     4;
   font-family: 'Fairview_Regular','Helvetica Neue',Helvetica, sans-serif;
 }
@@ -144,7 +164,6 @@ body, html {
 }
 
 #google_container {
-	margin-top:   20px;
   background:    url("wash-white.png") repeat scroll 0% 0% transparent;
   border-radius: 16px 16px 16px 16px;
   z-index:       10;
@@ -153,20 +172,20 @@ body, html {
   text-align:    center;
 }
  
- #google_container h1 a {
+#google_container h1 a {
   font-size:   40px;
   color:       rgb(71, 164, 71);
   margin:      0px 10px 30px;
 }
  
- #google_container h1 {
+#google_container h1 {
   font-size:   40px;
   color:       rgb(71, 164, 71);
   margin:      0px 10px 30px;
 }
  
- #google_container p {
-	color:     black;
+#google_container p {
+  color:     black;
   font-size: 15px;
   margin:    0px 10px 0px;
 }

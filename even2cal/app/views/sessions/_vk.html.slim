@@ -1,15 +1,18 @@
-div id="vk_container"
-  header
-    h1
-      - unless @vk_authorized
-        = link_to "Авторизация в Вконтакте", 'auth/vkontakte'
-      - else
-        = "Вы уже авторизованы"
-  p
-    | Ваша авторизация необходима для получения списка ваших событий.
-    br /
-    | Доступ будет открыт только для текущей сессии.
-    br /
-    | И мы не сохраняем ваши данные. Честно.
-
-
+div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"
+  div id="vk_container"
+    header
+      h1
+        - unless @vk_authorized
+          = link_to "Авторизация в Вконтакте", 'auth/vkontakte'
+        - else
+          = "Вы уже авторизованы"
+    p
+      | Ваша авторизация необходима для получения списка ваших событий.
+      br /
+      | Доступ будет открыт только для текущей сессии.
+      br /
+      | И мы не сохраняем ваши данные. Честно.
+div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"
+  div class="section_image"
+    = image_tag "wall1.jpg"
+      
