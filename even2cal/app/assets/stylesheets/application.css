@@ -232,7 +232,28 @@ body, html {
   display: none;
 }
 
+#events_list {
+  background:    url("wash-white.png") repeat scroll 0% 0% transparent;
+  border-radius: 16px 16px 16px 16px;
+  z-index:       9;
+  text-align:    left;
+}
 
+#events_list h3 {
+  font-size: 20px;
+  color:     rgb(71, 164, 71);
+  margin:    5px 10px 5px;
+}
+
+#events_list p {
+	color:     black;
+  font-size: 13px;
+  margin:    0px 10px 0px;
+}
+
+#events_list .img-thumbnail {
+  margin-left: 10px;
+}
 
 
 
@@ -537,33 +558,7 @@ body, html {
  *   display: none;
  * }
  * 
- * #events_list {
- *   background:    url("wash-white.png") repeat scroll 0% 0% transparent;
- *   position:      absolute;
- *   border-radius: 16px 16px 16px 16px;
- *   z-index:       9;
- *   top:           2170px;
- *   right:         110px;
- *   width:         550px;
- *   height:        530px;
- *   text-align:    left;
- * }
- * 
- * #events_list h3 {
- *   font-size: 20px;
- *   color:     rgb(71, 164, 71);
- *   margin:    5px 10px 5px;
- * }
- * 
- * #events_list p {
- * 	color:     black;
- *   font-size: 13px;
- *   margin:    0px 10px 0px;
- * }
- * 
- * #events_list .img-thumbnail {
- *   margin-left: 10px;
- * }
+ 
  * 
  * .page-selection .pagination {
  *   padding-left: 10px;

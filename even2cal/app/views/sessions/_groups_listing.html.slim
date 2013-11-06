@@ -1,16 +1,15 @@
 div id="events_list"
   = form_tag sessions_import_events_path do
-    div class="grid"
-      div class="row"
-        div id="events_content"
-      div class="row"
-        div id="import_btn"      
-          = submit_tag "Импортировать!", {class: "btn btn-success"}
-        div class="page-selection"
+    div class="row"
+      div id="events_content"
+    div class="row"
+      div id="import_btn"      
+        = submit_tag "Импортировать!", {class: "btn btn-success"}
+      div class="page-selection"
 
 div id="hidden_content"
   - @event_pairs.each do |event|
-      div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"
+      div class="col-xs-12 col-sm-6 col-md-3 col-lg-3"
         p
           b
             = Time.at(event['start_date'].to_i).to_s(:short)
@@ -28,20 +27,54 @@ div id="hidden_content"
 
 javascript:
   $( document ).ready(function(){
-    //parse selector via rexeg to render 1?,2,3 events per row (responsive pagging)
-    var array = $('#hidden_content .col-xs-12') || $('#hidden_content col-sm-12') || $('#hidden_content col-md-4') || $('#hidden_content col-lg-4');
-    $("#events_content").append(array[0]);
-    $("#events_content").append(array[1]);
-    var pagesNumber = #{@event_pairs.size % 2 == 0 ? @event_pairs.size / 2 : @event_pairs.size / 2 + 1};
+    var array = $('#hidden_content .col-xs-12') || $('#hidden_content col-sm-12') || $('#hidden_content col-md-4') || $('#hidden_content col-lg-3');
+    var itemsPerRow;
+    switch(array.width()){
+    case 100:
+      itemsPerRow = 1;
+      break;
+    case 50:
+      itemsPerRow = 2;
+      break;
+    case 25:
+      itemsPerRow = 4;
+    }
+
+    var eventPairsSize = #{@event_pairs.size};
+    for (var i = 0; i < itemsPerRow; i++){
+      if (eventPairsSize >= i){
+        $("#events_content").append(array[i]);
+      }
+    }
+
+    var pagesNumber = eventPairsSize % itemsPerRow == 0 ? eventPairsSize / itemsPerRow :  eventPairsSize / itemsPerRow + 1;
     $('.page-selection').bootpag({
       total: pagesNumber, 
       current: 1
     }).on("page", function(event, num){
       $.each(array, function(i, v){
-        if ((i == num*2-2) || (i == num*2-1)){
-          $(v).show();
-        } else {
-          $(v).hide();
+        switch(itemsPerRow){
+        case 4:
+          if ((i == num * 4 - 4) || (i == num * 4 - 3) || (i == num * 4 - 2) || (i == num * 4 - 1)){
+            $(v).show();
+          } else {
+            $(v).hide();
+          }
+          break;
+        case 2:
+          if ((i == num * 2 - 2) || (i == num * 2 - 1)){
+            $(v).show();
+          } else {
+            $(v).hide();
+          }
+          break;
+        case 1:
+          if (i == num - 1){
+            $(v).show();
+          } else {
+            $(v).hide();
+          }
+          break;
         }
         $("#events_content").append(v);
       });

@@ -75,18 +75,18 @@ module SocialNetworkConnector
         group_fields = ['place', 'description', 'start_date', 'end_date']
 
         all_groups = vk.groups.get(extended: 1,
-                                     fields: group_fields,
-      													      count: 30)
+                                     fields: group_fields)
+      													      #count: 60)
         all_groups.shift
         publics = vk.groups.get(extended: 1,
                                   filter: ['publics'],
-                                  fields: group_fields,
-      												     count: 10)
+                                  fields: group_fields)
+      							#					     count: 20)
         publics.shift
         simple_groups = vk.groups.get(extended: 1,
                                         filter: ['groups'],
-                                        fields: group_fields,
-      														       count: 10)
+                                        fields: group_fields)
+      							#							       count: 20)
         simple_groups.shift
         
 #       VK has a bug in API - it's cannot just return groups with type 'event' 

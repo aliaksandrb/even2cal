@@ -44,7 +44,8 @@ body
         = yield(:google)
 
     div class="section"
-      = yield(:events_list)
+      div class="row events"
+        = yield(:events_list)
 
     div id="footer"
       = render partial: "layouts/footer"
